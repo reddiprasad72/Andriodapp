@@ -1,0 +1,3 @@
+include ':unityLibrary'
+include ':app'
+include ':update-lib'
