@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/background_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/back_app"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@id/guidelineLogoEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineLogoStart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/layout_toolbar_wallet" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:alpha="0.25"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsvWallet"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingBottom="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <include layout="@layout/layout_guideline" />
+
+            <View
+                android:id="@+id/walletBack"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/battle_history_bg"
+                app:layout_constraintDimensionRatio="19:9"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img"
+                android:layout_width="@dimen/_47sdp"
+                android:layout_height="@dimen/_47sdp"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/wallet_side_drawer"
+                app:layout_constraintBottom_toTopOf="@id/textViewTotalBalance"
+                app:layout_constraintEnd_toEndOf="@id/walletBack"
+                app:layout_constraintStart_toStartOf="@id/walletBack"
+                app:layout_constraintTop_toTopOf="@id/walletBack"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer1"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:background="@color/colorTransparent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintBottom_toTopOf="@id/textViewTotalBalanceLabel"
+                app:layout_constraintEnd_toEndOf="@id/img"
+                app:layout_constraintStart_toStartOf="@id/img"
+                app:layout_constraintTop_toBottomOf="@id/img">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/shimmer_demo_color"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer2"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:background="@color/colorTransparent"
+                android:elevation="5dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintBottom_toTopOf="@+id/textViewDeposite"
+                app:layout_constraintStart_toEndOf="@id/img2"
+                app:layout_constraintTop_toTopOf="@id/viewBack1">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/shimmer_demo_color"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer3"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:background="@color/colorTransparent"
+                android:elevation="5dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintBottom_toTopOf="@+id/textViewWinning"
+                app:layout_constraintStart_toEndOf="@id/img3"
+                app:layout_constraintTop_toTopOf="@id/viewBack2">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/shimmer_demo_color"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer4"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:background="@color/colorTransparent"
+                android:elevation="5dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintBottom_toTopOf="@+id/textViewBonus"
+                app:layout_constraintStart_toEndOf="@id/img4"
+                app:layout_constraintTop_toTopOf="@id/viewBack3">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/shimmer_demo_color"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTotalBalance"
+                style="@style/fontBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text=""
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_25ssp"
+                app:layout_constraintBottom_toTopOf="@id/textViewTotalBalanceLabel"
+                app:layout_constraintEnd_toEndOf="@id/walletBack"
+                app:layout_constraintStart_toStartOf="@id/walletBack"
+                app:layout_constraintTop_toBottomOf="@id/img"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTotalBalanceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/berlin_sans_regular"
+                android:text="@string/label_total_balance"
+                android:textColor="@color/text_content_color"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintBottom_toBottomOf="@id/walletBack"
+                app:layout_constraintEnd_toEndOf="@id/walletBack"
+                app:layout_constraintStart_toStartOf="@id/walletBack"
+                app:layout_constraintTop_toBottomOf="@id/textViewTotalBalance"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <View
+                android:id="@+id/viewBack1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/layer_bg_small"
+                app:layout_constraintBottom_toBottomOf="@id/dummy"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/walletBack"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonAddCash"
+                style="@style/btnStyleCommonSmall"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginVertical="9dp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:text="@string/button_add_cash"
+                android:textSize="@dimen/_9ssp"
+                app:layout_constraintBottom_toBottomOf="@id/viewBack1"
+                app:layout_constraintEnd_toEndOf="@id/viewBack1"
+                app:layout_constraintTop_toTopOf="@id/viewBack1"
+                app:layout_constraintWidth_percent=".22" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textviewMessage1"
+                style="@style/fontRegular"
+                android:layout_width="@dimen/_180sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/gradient_tooltip"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/message_deposite_amount_tool_tip"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintBottom_toTopOf="@id/tool1_arrow"
+                app:layout_constraintEnd_toEndOf="@id/tool1_arrow"
+                app:layout_constraintStart_toStartOf="@id/tool1_arrow" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textviewMessage2"
+                style="@style/fontRegular"
+                android:layout_width="@dimen/_180sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/gradient_tooltip"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/message_withdraw_amount_tool_tip"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintBottom_toTopOf="@id/tool2_arrow"
+                app:layout_constraintEnd_toEndOf="@id/tool2_arrow"
+                app:layout_constraintStart_toStartOf="@id/tool2_arrow" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textviewMessage3"
+                style="@style/fontRegular"
+                android:layout_width="@dimen/_180sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/gradient_tooltip"
+                android:elevation="10dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/message_bonus_amount_tool_tip"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintBottom_toTopOf="@id/tool3_arrow"
+                app:layout_constraintEnd_toEndOf="@id/tool3_arrow"
+                app:layout_constraintStart_toStartOf="@id/tool3_arrow" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDepositeAmount"
+                style="@style/fontBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:text=""
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintBottom_toTopOf="@+id/textViewDeposite"
+                app:layout_constraintStart_toEndOf="@id/img2"
+                app:layout_constraintTop_toTopOf="@id/viewBack1" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/tool1_arrow"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="8dp"
+                android:elevation="5dp"
+                android:src="@drawable/ic_down_arrow_"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/info1"
+                app:layout_constraintEnd_toEndOf="@+id/info1"
+                app:layout_constraintStart_toStartOf="@id/info1" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/tool3_arrow"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="8dp"
+                android:elevation="10dp"
+                android:src="@drawable/ic_down_arrow_"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/info3"
+                app:layout_constraintEnd_toEndOf="@+id/info3"
+                app:layout_constraintStart_toStartOf="@id/info3" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/tool2_arrow"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="8dp"
+                android:elevation="5dp"
+                android:src="@drawable/ic_down_arrow_"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/info2"
+                app:layout_constraintEnd_toEndOf="@+id/info2"
+                app:layout_constraintStart_toStartOf="@id/info2" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/info1"
+                android:layout_width="0dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_info"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewDeposite"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintStart_toEndOf="@+id/textViewDeposite"
+                app:layout_constraintTop_toTopOf="@id/textViewDeposite" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/info2"
+                android:layout_width="0dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center_horizontal"
+                android:elevation="5dp"
+                android:src="@drawable/ic_info"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewWinning"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintStart_toEndOf="@+id/textViewWinning"
+                app:layout_constraintTop_toTopOf="@id/textViewWinning" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/info3"
+                android:layout_width="0dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center_horizontal"
+                android:elevation="5dp"
+                android:src="@drawable/ic_info"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewBonus"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintStart_toEndOf="@+id/textViewBonus"
+                app:layout_constraintTop_toTopOf="@id/textViewBonus" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDeposite"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:paddingEnd="8dp"
+                android:text="@string/label_deposite_cash"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintStart_toEndOf="@id/img2"
+                app:layout_constraintTop_toBottomOf="@id/textViewDepositeAmount" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img2"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/wallet_side_drawer"
+                app:layout_constraintStart_toStartOf="@id/viewBack1"
+                app:layout_constraintTop_toTopOf="@id/viewBack1"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <View
+                android:id="@+id/dummy"
+                android:layout_width="1dp"
+                android:layout_height="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="@id/img2"
+                app:layout_constraintTop_toBottomOf="@id/img2" />
+
+            <View
+                android:id="@+id/viewBack2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/layer_bg_small"
+                app:layout_constraintBottom_toBottomOf="@id/dummy3"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/viewBack1" />
+
+            <View
+                android:id="@+id/viewBack3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/layer_bg_small"
+                app:layout_constraintBottom_toBottomOf="@id/dummy4"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/viewBack2" />
+
+            <!--  <androidx.appcompat.widget.AppCompatButton
+                  android:id="@+id/buttonWithdraw"
+                  style="@style/btnStyleCommonSmall"
+                  android:layout_width="0dp"
+                  android:layout_height="0dp"
+                  android:layout_marginStart="@dimen/_5sdp"
+                  android:layout_marginEnd="@dimen/_15sdp"
+                  android:text="@string/button_withdraw"
+                  android:textSize="@dimen/_9ssp"
+                  app:layout_constraintBottom_toBottomOf="@id/viewBack2"
+                  app:layout_constraintDimensionRatio="12:6"
+                  app:layout_constraintEnd_toEndOf="@id/viewBack2"
+                  app:layout_constraintTop_toTopOf="@id/viewBack2"
+                  app:layout_constraintWidth_percent=".18" />-->
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonWithdraw"
+                style="@style/btnStyleCommonSmall"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginVertical="9dp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:text="@string/button_withdraw"
+                android:textSize="@dimen/_9ssp"
+                app:layout_constraintBottom_toBottomOf="@id/viewBack2"
+                app:layout_constraintEnd_toEndOf="@id/viewBack2"
+                app:layout_constraintTop_toTopOf="@id/viewBack2"
+                app:layout_constraintWidth_percent=".22" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img3"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/notification_cup"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp"
+                app:layout_constraintStart_toStartOf="@id/viewBack2"
+                app:layout_constraintTop_toTopOf="@id/viewBack2"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <View
+                android:id="@+id/dummy3"
+                android:layout_width="1dp"
+                android:layout_height="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="@id/img3"
+                app:layout_constraintTop_toBottomOf="@id/img3" />
+
+            <View
+                android:id="@+id/dummy4"
+                android:layout_width="1dp"
+                android:layout_height="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="@id/img4"
+                app:layout_constraintTop_toBottomOf="@id/img4" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewWinningAmount"
+                style="@style/fontBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:text=""
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintBottom_toTopOf="@+id/textViewWinning"
+                app:layout_constraintStart_toEndOf="@id/img3"
+                app:layout_constraintTop_toTopOf="@id/viewBack2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewWinning"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:paddingEnd="8dp"
+                android:text="@string/label_winning_amount"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintStart_toEndOf="@id/img3"
+                app:layout_constraintTop_toBottomOf="@id/textViewWinningAmount" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img4"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/gift_icon"
+                app:civ_border_width="1dp"
+                app:layout_constraintStart_toStartOf="@id/viewBack3"
+                app:layout_constraintTop_toTopOf="@id/viewBack3"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewBonusAmount"
+                style="@style/fontBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:text=""
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintStart_toEndOf="@id/img4"
+                app:layout_constraintTop_toTopOf="@id/viewBack3" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewBonus"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:paddingEnd="8dp"
+                android:text="@string/label_bonus_cash"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintStart_toEndOf="@id/img4"
+                app:layout_constraintTop_toBottomOf="@id/textViewBonusAmount" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonUseNow"
+                style="@style/btnStyleCommonSmall"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:text="@string/use_now"
+                android:textSize="@dimen/_9ssp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/viewBack3"
+                app:layout_constraintDimensionRatio="10:6"
+                app:layout_constraintEnd_toEndOf="@id/viewBack3"
+                app:layout_constraintTop_toTopOf="@id/viewBack3"
+                app:layout_constraintWidth_percent=".18" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupTool1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="tool1_arrow,textviewMessage1" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupTool2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="tool2_arrow,textviewMessage2" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupTool3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="tool3_arrow,textviewMessage3" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".75" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

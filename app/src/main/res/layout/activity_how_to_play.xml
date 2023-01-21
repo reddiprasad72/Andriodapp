@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black"
+    android:orientation="vertical">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/background_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/back_app"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@id/guidelineLogoEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineLogoStart"
+        app:layout_constraintTop_toTopOf="parent" />
+    <include
+        android:id="@+id/tool"
+        layout="@layout/layout_toolbar_title_back" />
+
+    <include layout="@layout/layout_guideline" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewHowToPlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:overScrollMode="never"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/tool"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_how_to_play" />
+
+    <include
+        android:id="@+id/llEmpty"
+        layout="@layout/empty_layout"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

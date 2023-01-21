@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/background_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/back_app"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@id/guidelineLogoEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineLogoStart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include layout="@layout/layout_guideline" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewReferEarnHome"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:src="@drawable/refer_earn_home"
+        app:layout_constraintBottom_toTopOf="@id/nsScroll"
+        app:layout_constraintEnd_toStartOf="@id/imageViewNotification"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewProfile"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/nsScroll"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewReferEarnHome"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:src="@drawable/ic_navigation"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewProfile"
+        app:layout_constraintEnd_toEndOf="@id/imageViewProfile" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imagViewBluBoy"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:src="@drawable/ic_vector_three_line"
+        app:layout_constraintBottom_toTopOf="@id/nsScroll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewNotification"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:src="@drawable/bell_noti"
+        app:layout_constraintBottom_toTopOf="@id/nsScroll"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--<androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewSpinner"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:src="@drawable/ic_spinner"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewProfile"
+        app:layout_constraintEnd_toStartOf="@id/imageViewProfile"
+        app:layout_constraintTop_toTopOf="@id/imageViewProfile" />-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintBonusCash"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/bg_square_one"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingEnd="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/imageViewProfile">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constBonus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewGift"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/ic_gift"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewBonusLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:alpha="0.8"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/label_bonus"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_9ssp"
+                app:layout_constraintStart_toEndOf="@id/imageViewGift"
+                app:layout_constraintTop_toTopOf="@id/imageViewGift" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewBonus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:minWidth="@dimen/_40sdp"
+                android:textColor="@color/colorBlue"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewGift"
+                app:layout_constraintStart_toStartOf="@id/textViewBonusLabel"
+                app:layout_constraintTop_toBottomOf="@id/textViewBonusLabel"
+                tools:text="₹ 150" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:background="@color/colorBlackOpacity30"
+            app:layout_constraintBottom_toBottomOf="@id/constBonus"
+            app:layout_constraintStart_toEndOf="@id/constBonus"
+            app:layout_constraintTop_toTopOf="@id/constBonus" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintPurse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/buttonAddCash"
+            app:layout_constraintStart_toStartOf="@id/viewLine"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewPurse"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/ic_purse"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewCashBalLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:alpha="0.8"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/label_cash_bal"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_9ssp"
+                app:layout_constraintStart_toEndOf="@id/imageViewPurse"
+                app:layout_constraintTop_toTopOf="@id/imageViewPurse" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewCashBal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/montserrat_bold"
+                android:minWidth="@dimen/_50sdp"
+                android:singleLine="true"
+                android:textColor="@color/colorBlue"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewPurse"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/textViewCashBalLabel"
+                app:layout_constraintTop_toBottomOf="@id/textViewCashBalLabel"
+                tools:text="₹ 239" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonAddCash"
+            style="@style/btnStyleCommon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button_shadow"
+            android:drawableStart="@drawable/ic_plus"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:text="@string/button_add_cash"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/_40sdp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/constraintBonusCash">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include layout="@layout/layout_guideline" />
+
+                <com.bluboy.android.presentation.utility.bannerLilbrary.BannerLayout
+                    android:id="@+id/bannerViewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_130sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:visibility="visible"
+                    app:autoPlaying="true"
+                    app:centerScale="1.2"
+                    app:interval="2000"
+                    app:itemSpace="30"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:moveSpeed="1"
+                    app:showIndicator="false" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/mShimmerViewPaggerBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_130sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/colorTransparent"
+                    android:visibility="visible"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <include layout="@layout/shimmer_banner" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <com.jackandphantom.carouselrecyclerview.CarouselRecyclerview
+                    android:id="@+id/recyclerCarousel"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_230sdp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewPopularGame"
+                    app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@+id/bannerViewpager" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewPopularGame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/berlin_sans_regular"
+                    android:text="@string/label_popular_trending_games"
+                    android:textColor="@color/text_heading_color"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/recyclerCarousel" />
+
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollViewTrending"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/_6sdp"
+                    android:scrollbars="none"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textViewPopularGame">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerViewPopularGame"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:nestedScrollingEnabled="false"
+                            android:overScrollMode="never"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:itemCount="2"
+                            tools:listitem="@layout/item_popular_game" />
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintMoreGames"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:visibility="gone">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imageViewGame"
+                                android:layout_width="@dimen/_60sdp"
+                                android:layout_height="@dimen/_62sdp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_more_game_bg"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/textViewMoreGame"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:fontFamily="@font/montserrat"
+                                android:gravity="center"
+                                android:padding="@dimen/_2sdp"
+                                android:text="@string/label_more_games"
+                                android:textColor="@color/colorBlueDark"
+                                android:textSize="@dimen/_10ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imageViewMoreArrow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_more_game_arrow"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/textViewMoreGame" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/mShimmerViewPaggerPopularGame"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_88sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/colorTransparent"
+                    android:visibility="gone"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/textViewPopularGame">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <include layout="@layout/shimmer_popular_game" />
+
+                        <include layout="@layout/shimmer_popular_game" />
+
+                        <include layout="@layout/shimmer_popular_game" />
+
+                        <include layout="@layout/shimmer_popular_game" />
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewFeaturedGames"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/berlin_sans_regular"
+                    android:text="@string/label_featured_game"
+                    android:textColor="@color/text_heading_color"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/horizontalScrollViewTrending" />
+
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPagerFeaturedGames"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_88sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:clipToPadding="false"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:paddingEnd="@dimen/_8sdp"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/textViewFeaturedGames"
+                    tools:visibility="visible" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/mShimmerViewPaggerFeaturedGame"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_88sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/colorTransparent"
+                    android:visibility="gone"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/textViewFeaturedGames">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <include layout="@layout/shimmer_featured_game" />
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+                <com.bluboy.android.presentation.utility.MyViewPagerIndicator
+                    android:id="@+id/dotsIndicatorFeaturedGames"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewPagerFeaturedGames"
+                    app:vpi_default_color="@color/text_content_color"
+                    app:vpi_distance="15dp"
+                    app:vpi_distanceType="BY_DISTANCE"
+                    app:vpi_indicatorType="CIRCLE_LINE"
+                    app:vpi_length="10dp"
+                    app:vpi_radius="5dp"
+                    app:vpi_selected_color="#E7B492" />
+
+
+                <!--                <com.tbuonomo.viewpagerdotsindicator.DotsIndicator-->
+                <!--                    android:id="@+id/dotsIndicatorFeaturedGames"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="@dimen/_8sdp"-->
+                <!--                    app:dotsColor="@color/colorWhiteOpacity50"-->
+                <!--                    app:dotsSize="8dp"-->
+                <!--                    app:dotsSpacing="4dp"-->
+                <!--                    app:dotsStrokeWidth="@dimen/_4sdp"-->
+                <!--                    app:dotsWidthFactor="1"-->
+                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@id/viewPagerFeaturedGames"-->
+                <!--                    app:selectedDotColor="@color/colorYellowLight" />-->
+
+
+                <!--             -->
+                <!--                <androidx.recyclerview.widget.RecyclerView-->
+                <!--                    android:id="@+id/recyclerViewHomeGame"-->
+                <!--                    android:layout_width="0dp"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="@dimen/_8sdp"-->
+                <!--                    android:nestedScrollingEnabled="false"-->
+                <!--                    android:orientation="vertical"-->
+                <!--                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@id/textViewBestGamesPlay"-->
+                <!--                    app:spanCount="2"-->
+                <!--                    tools:itemCount="10"-->
+                <!--                    tools:listitem="@layout/item_games_home" />-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewHomeGame"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:overScrollMode="never"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:scrollbars="none"
+                    android:visibility="visible"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dotsIndicatorFeaturedGames"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_games_home_parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewBestGamesPlay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/label_all_games"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/recyclerViewHomeGame" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewAllGame"
+                    android:layout_width="0dp"
+                    android:overScrollMode="never"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textViewBestGamesPlay"
+                    app:spanCount="2"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/item_all_games_home" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/mShimmerViewContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_6sdp"
+                    android:layout_marginBottom="@dimen/_30sdp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewBestGamesPlay">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <include layout="@layout/shimmer_all_games" />
+
+                            <include layout="@layout/shimmer_all_games" />
+
+                            <include layout="@layout/shimmer_all_games" />
+
+                            <include layout="@layout/shimmer_all_games" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <!--                        <androidx.appcompat.widget.LinearLayoutCompat-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:orientation="horizontal"-->
+                        <!--                            android:gravity="center"-->
+                        <!--                            android:layout_height="wrap_content">-->
+                        <!--                            <include layout="@layout/shimmer_all_games"/>-->
+                        <!--                            <include layout="@layout/shimmer_all_games"/>-->
+                        <!--                        </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+                        <!--                        <androidx.appcompat.widget.LinearLayoutCompat-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:orientation="horizontal"-->
+                        <!--                            android:gravity="center"-->
+                        <!--                            android:layout_height="wrap_content">-->
+                        <!--                            <include layout="@layout/shimmer_all_games"/>-->
+                        <!--                            <include layout="@layout/shimmer_all_games"/>-->
+                        <!--                        </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/spinBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:paddingBottom="@dimen/_20sdp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/spin_banner_home"
+                    app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerViewHomeGame"
+                    app:shapeAppearanceOverlay="@style/shapeableImageView" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

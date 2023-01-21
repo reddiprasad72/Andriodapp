@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/side_drawer_bg"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/background_img_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/side_drawer_header_bg"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/background_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintTop_toBottomOf="@id/background_img_header" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageViewProfileNav"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_transaction_item"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/shapeableImageViewProfile"
+        app:strokeColor="@color/colorWhite"
+        app:strokeWidth="@dimen/_1sdp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewUserNameDrawer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:fontFamily="@font/berlin_sans_regular"
+        android:maxLength="15"
+        android:paddingEnd="10dp"
+        android:text=""
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintBottom_toTopOf="@id/textViewViewProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageViewProfileNav"
+        app:layout_constraintTop_toTopOf="@id/imageViewProfileNav" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewViewProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_forward_yellow"
+        android:drawablePadding="@dimen/_5sdp"
+        android:fontFamily="@font/berlin_sans_regular"
+        android:includeFontPadding="false"
+        android:paddingTop="@dimen/_3sdp"
+        android:paddingBottom="@dimen/_3sdp"
+        android:text="@string/label_view_profile"
+        android:textColor="@color/colorBlackOpacity60"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewProfileNav"
+        app:layout_constraintStart_toStartOf="@id/textViewUserNameDrawer"
+        app:layout_constraintTop_toBottomOf="@id/textViewUserNameDrawer" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewClose"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:padding="@dimen/_7sdp"
+        android:src="@drawable/ic_close_yellow"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewProfileNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageViewProfileNav" />
+
+    <View
+        android:id="@+id/viewLine"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@color/colorWhiteOpacity30"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/imageViewProfileNav" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@+id/textViewNavLogout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/background_img_header">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:orientation="vertical"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            app:layout_constraintBottom_toTopOf="@+id/textViewNavLogout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/background_img_header">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewNavHome"
+                style="@style/tvStyleNav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/side_nav_selection_bg"
+                android:drawableStart="@drawable/home_side_drawer"
+                android:drawablePadding="@dimen/_20sdp"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="@string/label_home"
+                android:textColor="@color/colorText"
+                android:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewNavMyWallet"
+                style="@style/tvStyleNav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:drawableStart="@drawable/wallet_side_drawer"
+                android:drawablePadding="@dimen/_20sdp"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="@string/label_my_wallet" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewNavLeaderboard"
+                style="@style/tvStyleNav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:drawableStart="@drawable/leaderboard_side_drawer"
+                android:drawablePadding="@dimen/_20sdp"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="@string/label_leaderboard" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewNavGameHistory"
+                style="@style/tvStyleNav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:drawableStart="@drawable/history_side_drawer"
+                android:drawablePadding="@dimen/_20sdp"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="@string/label_game_history" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewNavSettings"
+                style="@style/tvStyleNav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:drawableStart="@drawable/settings_side_drawer"
+                android:drawablePadding="@dimen/_20sdp"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="@string/label_settings" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewNavReferEarn"
+                style="@style/tvStyleNav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:drawableStart="@drawable/share_side_drawer"
+                android:drawablePadding="@dimen/_20sdp"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="@string/label_refer_earn" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewNavHowToPlay"
+                style="@style/tvStyleNav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:drawableStart="@drawable/question_side_drawer"
+                android:drawablePadding="@dimen/_20sdp"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="@string/label_how_to_play" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewNavLogout"
+        style="@style/tvStyleNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:drawableStart="@drawable/logout_icon_settings"
+        android:drawablePadding="@dimen/_20sdp"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:text="@string/label_logout"
+        app:layout_constraintBottom_toTopOf="@+id/tvAppVersion"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAppVersion"
+        style="@style/tvStyleRegular"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

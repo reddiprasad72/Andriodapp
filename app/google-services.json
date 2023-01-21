@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1082809213855",
+    "project_id": "test-bluboy-games",
+    "storage_bucket": "test-bluboy-games.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082809213855:android:5e08da07f301433b2593aa",
+        "android_client_info": {
+          "package_name": "com.bluboy.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1082809213855-oldi4nrvd9jnlstt14ru6nqfpflhpuau.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bluboy.android",
+            "certificate_hash": "c686ffe45344753b6ab3e4d98d5102c8f9c711bc"
+          }
+        },
+        {
+          "client_id": "1082809213855-d3ei68g1sc0o207mp3auqe56vttkalon.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAu_Dcjj9InJpwsuQc9sXzJfOzt0yIdkoI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1082809213855-d3ei68g1sc0o207mp3auqe56vttkalon.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

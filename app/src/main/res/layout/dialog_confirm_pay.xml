@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewClaim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_15sdp"
+        app:cardCornerRadius="@dimen/_12sdp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintClaimDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_edttext_color"
+            android:paddingBottom="@dimen/_20sdp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineLogoEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.6" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineLogoStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.4" />
+
+            <ImageView
+                android:id="@+id/imageViewLogoutBg"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/logout_top_bg"
+                app:layout_constraintDimensionRatio="383:137"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewClose"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:padding="@dimen/_7sdp"
+                android:src="@drawable/ic_close_dialog"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTitle"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:text="@string/label_paying_from"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_20ssp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewLogoutBg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewLogo"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="@dimen/dimen_0dp"
+                android:src="@drawable/logo_bluboy"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="@id/guidelineLogoEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineLogoStart"
+                app:layout_constraintTop_toTopOf="@id/imageViewClose" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/withdraw_dialog_data_bg"
+                android:alpha="0.55"
+                app:layout_constraintBottom_toBottomOf="@id/tvNickNameLabel"
+                app:layout_constraintTop_toTopOf="@id/tvNickNameLabel" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAccountHolderNumberLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/berlin_sans_regular"
+                android:padding="@dimen/_5sdp"
+                android:singleLine="true"
+                android:text="Total amount needed"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toStartOf="@id/textViewAccountHolderName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewLogoutBg" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewAccountHolderName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/berlin_sans_regular"
+                android:singleLine="true"
+                android:text="₹ 3.00 "
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintBottom_toBottomOf="@id/tvAccountHolderNumberLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvAccountHolderNumberLabel" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNickNameLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/berlin_sans_regular"
+                android:padding="@dimen/_5sdp"
+                android:singleLine="true"
+                android:text="Total deposit or winning cash used"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toStartOf="@id/textViewNickName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvAccountHolderNumberLabel" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewNickName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/berlin_sans_regular"
+                android:singleLine="true"
+                android:text="- ₹ 2.00"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintBottom_toBottomOf="@id/tvNickNameLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvNickNameLabel" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/withdraw_dialog_data_bg"
+                android:alpha="0.55"
+                app:layout_constraintBottom_toBottomOf="@id/tvAccountNumberLabel"
+                app:layout_constraintTop_toTopOf="@id/tvAccountNumberLabel" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBankNameLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/berlin_sans_regular"
+                android:padding="@dimen/_5sdp"
+                android:singleLine="true"
+                android:text="Total bonus cash used"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toStartOf="@id/textViewBankName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvNickNameLabel" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewBankName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/berlin_sans_regular"
+                android:singleLine="true"
+                android:text="- ₹ 1.00"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintBottom_toBottomOf="@id/tvBankNameLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvBankNameLabel" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAccountNumberLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/berlin_sans_regular"
+                android:padding="@dimen/_5sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:singleLine="true"
+                android:text="Payable Amount"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toStartOf="@id/textViewAccountNumber"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvBankNameLabel" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewAccountNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/berlin_sans_regular"
+                android:singleLine="true"
+                android:text="₹0"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="@id/tvAccountNumberLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvAccountNumberLabel" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonWithDrawMoney"
+                style="@style/btnStyleCommon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:text="@string/button_confirm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewAccountNumber" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

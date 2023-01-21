@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10sdp">
+
+    <include layout="@layout/layout_guideline" />
+
+    <View
+        android:id="@+id/viewBack1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/background_gradient_radius_12"
+        app:layout_constraintBottom_toBottomOf="@id/dummy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/img2"
+        android:layout_width="@dimen/_47sdp"
+        android:layout_height="@dimen/_47sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_11sdp"
+        android:background="@color/colorText_opacity_58"
+        android:scaleType="fitXY"
+        android:src="@drawable/promocode_speaker"
+        app:contentPadding="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="@id/viewBack1"
+        app:layout_constraintTop_toTopOf="@id/viewBack1"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:shapeAppearanceOverlay="@style/shapeableImageView" />
+
+    <View
+        android:id="@+id/dummy"
+        android:layout_width="1dp"
+        android:layout_height="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="@id/img2"
+        app:layout_constraintTop_toBottomOf="@id/img2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/textViewRedeemNow"
+        style="@style/btnStyleCommon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:background="@drawable/bg_btn_dark"
+        android:text="Redeem"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintBottom_toBottomOf="@id/viewBack1"
+        app:layout_constraintDimensionRatio="14:5"
+        app:layout_constraintEnd_toEndOf="@id/viewBack1"
+        app:layout_constraintTop_toBottomOf="@id/textViewCouponCode"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintWidth_percent=".20" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewCouponCode"
+        style="@style/fontRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_3sdp"
+        android:text="10GAME"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toTopOf="@id/textViewRedeemNow"
+        app:layout_constraintEnd_toEndOf="@id/viewBack1"
+        app:layout_constraintStart_toStartOf="@id/textViewRedeemNow"
+        app:layout_constraintTop_toTopOf="@id/viewBack1"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewCouponName"
+        style="@style/fontBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintBottom_toTopOf="@id/textViewCouponDescription"
+        android:paddingEnd="10dp"
+        android:text="@string/x_price_rupees"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintEnd_toStartOf="@id/textViewCouponCode"
+        app:layout_constraintStart_toEndOf="@id/img2"
+        app:layout_constraintTop_toTopOf="@id/img2" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewCouponDescription"
+        style="@style/fontRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:drawablePadding="8dp"
+        android:text="@string/label_deposite_cash"
+        android:textColor="@color/colorText_opacity_50"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="@id/img2"
+        app:layout_constraintEnd_toStartOf="@id/textViewRedeemNow"
+        app:layout_constraintStart_toEndOf="@id/img2"
+        app:layout_constraintTop_toBottomOf="@id/textViewCouponName" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

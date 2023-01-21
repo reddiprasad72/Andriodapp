@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/background_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/back_app"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@id/guidelineLogoEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineLogoStart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/layout_toolbar_title_back" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:alpha="0.25"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <include layout="@layout/layout_guideline" />
+
+    <View
+        android:id="@+id/viewWithdraw"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@drawable/bg_edittext_white"
+        app:layout_constraintBottom_toBottomOf="@id/dummy"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <com.bluboy.android.presentation.utility.CircleImageView
+        android:id="@+id/imageViewBank"
+        android:layout_width="@dimen/_37sdp"
+        android:layout_height="@dimen/_37sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:src="@drawable/bank_icon"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="1dp"
+        app:layout_constraintStart_toStartOf="@id/viewWithdraw"
+        app:layout_constraintTop_toTopOf="@id/viewWithdraw"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <View
+        android:id="@+id/dummy"
+        android:layout_width="1dp"
+        android:layout_height="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="@id/imageViewBank"
+        app:layout_constraintTop_toBottomOf="@id/imageViewBank" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTransfer"
+        style="@style/fontRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_13sdp"
+        android:text="@string/bank_transfer"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/_17ssp"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewBank"
+        app:layout_constraintEnd_toStartOf="@id/textViewAmount"
+        app:layout_constraintStart_toEndOf="@id/imageViewBank"
+        app:layout_constraintTop_toTopOf="@id/imageViewBank"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewAmount"
+        style="@style/fontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:gravity="center"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/dimen_20dp"
+        android:text="@string/x_price_rupees"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintBottom_toBottomOf="@id/viewWithdraw"
+        app:layout_constraintEnd_toEndOf="@id/viewWithdraw"
+        app:layout_constraintStart_toEndOf="@id/textViewTransfer"
+        app:layout_constraintTop_toTopOf="@id/viewWithdraw" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewSelectUpi"
+        style="@style/fontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:text="@string/label_select_upi"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/viewWithdraw" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAddBeneficiary"
+        style="@style/btnStyleCommon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:paddingHorizontal="@dimen/_15sdp"
+        android:text="@string/button_add_beneficiary"
+        android:textAllCaps="false"
+        android:textColor="@color/colorText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include
+        android:id="@+id/llEmpty"
+        layout="@layout/empty_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/btnAddBeneficiary"
+        app:layout_constraintTop_toBottomOf="@id/viewWithdraw" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@id/btnAddBeneficiary"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/textViewSelectUpi">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewBeneficiaryWithdraw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/withdraw_option_bg"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_beneficiary_withdraw" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupConstraintList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="recyclerViewBeneficiaryWithdraw" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

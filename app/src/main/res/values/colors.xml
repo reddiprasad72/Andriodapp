@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#101022</color>
+    <color name="colorPrimaryDark">#2353a1</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimaryPressed">#2353a1</color>
+
+    <color name="dullWhite">#D9D9D9</color>
+    <color name="divider">#979797</color>
+    <color name="window_background">#FFFFFF</color>
+
+    <color name="colorTextBlueLight">#9B9BBE</color>
+    <color name="colorTextHint">#828282</color>
+    <color name="colorTerms">#E7B492</color>
+    <color name="colorYellow">#FCA307</color>
+    <color name="colorYellowLight">#FCB707</color>
+    <color name="colorDark">#FFE600</color>
+    <color name="colorSpinBorder">#F9DF7B</color>
+
+
+    <color name="colorTextPrimary">#000000</color>
+    <color name="colorTextSecondary">#7b7b7b</color>
+
+    <color name="colorGray">#7E7E7E</color>
+    <color name="colorGrayLight">#666666</color>
+    <color name="colorGrayDark">#5B6A6A</color>
+    <color name="colorBlueOne">#E8F0F8</color>
+    <color name="colorGrayOne">#F0F0F0</color>
+    <color name="colorGrayTwo">#7D7D7D</color>
+
+    <color name="colorSecondaryText">#E7B492</color>
+    <color name="colorText">#110A00</color>
+    <color name="notify_drawable">#413b33</color>
+    <color name="colorText_opacity_58">#94110A00</color>
+    <color name="colorText_opacity_50">#66110A00</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhiteOpacity50">#77FFFFFF</color>
+    <color name="colorWhiteOpacity90">#99FFFFFF</color>
+    <color name="colorWhiteOpacity30">#30FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlackOpacity30">#30000000</color>
+    <color name="colorBlackOpacity60">#60000000</color>
+    <color name="colorBlackOpacity90">#90000000</color>
+    <color name="colorBlackOpacityAA">#AA000000</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorRed">#FF0000</color>
+    <color name="colorRedDark">#FF4C54</color>
+    <color name="colorBlueBold">#1164B4</color>
+    <color name="colorBlue">#8F00FF</color>
+    <color name="colorBlueDark">#511077</color>
+    <color name="colorGreenLight">#78BF55</color>
+    <color name="colorGreen">#38CC51</color>
+    <color name="colorGreenDark">#11D16E</color>
+    <color name="colorGreenOne">#4CD964</color>
+    <color name="colorGreenTwo">#3EB953</color>
+    <color name="colorOrange">#FC9A07</color>
+
+    <color name="shimmer_demo_color">#979797</color>
+
+    <color name="colorRankTwo">#00E0FF</color>
+    <color name="colorRankOne">#FFE600</color>
+    <color name="colorRankThree">#FA00FF</color>
+
+    //BLUBOY colors
+
+    <color name="background_black">#121212</color>
+    <color name="background_edttext_color">#F8CFB3</color>
+    <color name="text_heading_color">#E7B492</color>
+    <color name="text_content_color">#99E7B492</color>
+    <color name="btn_content_color">#110A00</color>
+    <color name="dark_rose_gold">#66531F00</color>
+    <color name="brown_color">#531F00</color>
+    <color name="name_color">#3C3939</color>
+    <color name="golden_color">#FFD600</color>
+    <color name="silver_color">#E3E3E3</color>
+    <color name="bronze_color">#DB9B50</color>
+
+    <!--Army!!! Please update above color as per your new project theme add more color below-->
+
+
+</resources>

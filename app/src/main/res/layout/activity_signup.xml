@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black"
+    tools:context=".presentation.loginsignup.SignupActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/background_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/back_app"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@id/guidelineLogoEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineLogoStart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/tool"
+        layout="@layout/layout_toolbar_title_back" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:paddingBottom="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tool">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/layout_guideline" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineCenterProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.3" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageVector"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="@dimen/dimen_0dp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:src="@drawable/logo_bluboy"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="@id/guidelineLogoEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineLogoStart"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".4" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/berlin_sans_regular"
+                android:text="@string/label_personal_signup"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/imageVector" />
+
+            <com.bluboy.android.presentation.utility.CircleImageView
+                android:id="@+id/logoBack"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:alpha="1"
+                android:elevation="0dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_cam_register"
+                app:civ_border_color="@color/text_heading_color"
+                app:civ_border_width="1dp"
+                app:civ_circle_background_color="@color/text_heading_color"
+                app:layout_constraintBottom_toBottomOf="@id/guideline25"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/textDetails"
+                app:layout_constraintWidth_percent=".25" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewProfileDummy"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:padding="@dimen/_15sdp"
+                android:src="@drawable/ic_cam_register"
+                android:visibility="gone"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="@id/logoBack"
+                app:layout_constraintStart_toStartOf="@id/logoBack"
+                app:layout_constraintTop_toTopOf="@id/logoBack" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewProfile"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="@id/logoBack"
+                app:layout_constraintStart_toStartOf="@id/logoBack"
+                app:layout_constraintTop_toTopOf="@id/logoBack" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewClickToUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/berlin_sans_regular"
+                android:text="@string/label_click_upload_image"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/logoBack" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mobText"
+                style="@style/tvStyleRegular"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/hint_user_name_str"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/textViewClickToUpload" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextCreateUserName"
+                style="@style/edtStyleCommon"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:digits="@string/digit_abc"
+                android:drawableEnd="@drawable/ic_tick_deselect"
+                android:hint="@string/hint_user_name"
+                android:inputType="text"
+                android:maxLength="12"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/mobText" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mailText"
+                style="@style/tvStyleRegular"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/hint_email_str"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/editTextCreateUserName" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextMail"
+                style="@style/edtStyleCommon"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:hint="@string/hint_email"
+                android:inputType="textEmailAddress"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/mailText" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/referralText"
+                style="@style/tvStyleRegular"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/hint_referral_code"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/editTextMail" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextReferral"
+                style="@style/edtStyleCommon"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:hint="@string/hint_referral_code"
+                android:inputType="textCapCharacters"
+                android:maxLength="10"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/referralText" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/stateText"
+                style="@style/tvStyleRegular"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/hint_select_state_str"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/editTextReferral" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextState"
+                style="@style/edtStyleCommon"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:drawableEnd="@drawable/ic_drop_down"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="@string/hint_select_state"
+                android:inputType="text"
+                android:longClickable="false"
+                android:maxLength="@integer/max_length_email"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/stateText" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_drop_down"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/editTextState"
+                app:layout_constraintEnd_toEndOf="@id/editTextState"
+                app:layout_constraintTop_toTopOf="@id/editTextState" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewState"
+                android:overScrollMode="never"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_115sdp"
+                android:background="@color/white"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:itemCount="20"
+                tools:listitem="@layout/item_state_list" />
+
+            <CheckBox
+                android:id="@+id/checkboxTermsConditions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/radio_auth_selector"
+                android:button="@null"
+                android:checked="false"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/editTextState" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/iAgree"
+                style="@style/tvStyleRegular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:fontFamily="@font/montserrat"
+                android:includeFontPadding="false"
+                android:paddingStart="@dimen/_2sdp"
+                android:paddingEnd="@dimen/_2sdp"
+                android:text="@string/i_agree_with_the_terms"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toEndOf="@id/checkboxTermsConditions"
+                app:layout_constraintTop_toTopOf="@id/checkboxTermsConditions" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonSubmit"
+                style="@style/btnStyleCommon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:text="@string/label_signup"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/checkboxTermsConditions" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/_5sdp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/background_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/back_app"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@id/guidelineLogoEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineLogoStart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/tool"
+        layout="@layout/layout_toolbar_title_back" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_42sdp">
+
+        <include layout="@layout/layout_guideline" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constaintReferal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/background_gradient_radius_12"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewReferal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/refer_img"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewGetRsTen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/fontBold"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:fontFamily="@font/berlin_sans_regular"
+                android:text="@string/get_10_for_every_referral"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toTopOf="@id/textViewRefferDetail"
+                app:layout_constraintStart_toEndOf="@id/imageViewReferal"
+                app:layout_constraintTop_toTopOf="@id/imageViewReferal" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewRefferDetail"
+                style="@style/fontRegular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/get_10_deposit_cash_every_time_when_friend_signs_up_on_bluboy"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewReferal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/textViewGetRsTen"
+                app:layout_constraintTop_toBottomOf="@id/textViewGetRsTen" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintReferalCode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/background_gradient_radius_12"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/constaintReferal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewYourReferalCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/berlin_sans_regular"
+                android:text="@string/label_your_referal_code"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:drawableEnd="@drawable/copy_img"
+                android:drawablePadding="@dimen/_13sdp"
+                android:fontFamily="@font/berlin_sans_regular"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewYourReferalCode"
+                tools:text="40SKDR" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/dashed_line_referal_code"
+                app:layout_constraintEnd_toEndOf="@id/textViewCode"
+                app:layout_constraintStart_toStartOf="@id/textViewCode"
+                app:layout_constraintTop_toBottomOf="@id/textViewCode" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewShare"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@drawable/share_img"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewInviteNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:fontFamily="@font/berlin_sans_regular"
+                android:text="@string/label_invite_now"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_10ssp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewShare"
+                app:layout_constraintEnd_toStartOf="@id/imageViewShare"
+                app:layout_constraintTop_toTopOf="@id/imageViewShare" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewMyReferEarning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/berlin_sans_regular"
+            android:text="@string/label_referal_earing"
+            android:textColor="@color/text_heading_color"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/constraintReferalCode" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewMyRefer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_7sdp"
+            android:background="@drawable/bg_btn_small_radial"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingBottom="@dimen/_20sdp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/textViewMyReferEarning"
+            tools:itemCount="20"
+            tools:listitem="@layout/item_my_refer" />
+
+        <LinearLayout
+            android:id="@+id/llEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textViewMyReferEarning">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivEmptyImage"
+                android:layout_width="@dimen/_170sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/no_data_found_center" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:src="@drawable/oops" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/label_no_item_in_list"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_10ssp" />
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewClaim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:cardCornerRadius="@dimen/_12sdp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintClaimDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_edttext_color"
+            android:paddingBottom="@dimen/_20sdp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineLogoEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.6" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineLogoStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.4" />
+
+            <ImageView
+                android:id="@+id/imageViewLogoutBg"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/logout_top_bg"
+                app:layout_constraintDimensionRatio="383:137"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewClose"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:padding="@dimen/_7sdp"
+                android:src="@drawable/ic_close_dialog"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewMessage"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:lineSpacingExtra="@dimen/_5sdp"
+                android:paddingHorizontal="10dp"
+                android:text="@string/update_message"
+                android:textColor="@color/colorText_opacity_50"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewLogoutBg" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewWhatsNew"
+                style="@style/fontRegular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:lineSpacingExtra="@dimen/_5sdp"
+                android:text="What's New keep"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_13ssp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewMessage" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDescription"
+                style="@style/fontRegular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:lineSpacingExtra="@dimen/_5sdp"
+                android:text="Test"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewWhatsNew" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLogout"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:text="Update Bluboy Game"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_20ssp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewLogoutBg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewLogo"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="@dimen/dimen_0dp"
+                android:src="@drawable/logo_bluboy"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="@id/guidelineLogoEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineLogoStart"
+                app:layout_constraintTop_toTopOf="@id/imageViewClose" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/update_btn"
+                style="@style/btnStyleCommon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/update_now"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewDescription" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBarDownload"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:max="100"
+                android:orientation="horizontal"
+                android:progress="45"
+                android:progressDrawable="@drawable/progress_bar_fill_state"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/update_btn" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDownload"
+                style="@style/fontBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="45 %"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_18ssp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/progressBarDownload" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

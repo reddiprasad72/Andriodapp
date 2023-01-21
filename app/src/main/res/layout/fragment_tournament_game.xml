@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScrollViewTournamentHistory"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/colorTransparent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewTournament"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:paddingStart="@dimen/_12sdp"
+        android:overScrollMode="never"
+        android:paddingEnd="@dimen/_12sdp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:nestedScrollingEnabled="false"
+        tools:itemCount="4"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/item_tournaments" />
+
+            <LinearLayout
+                android:id="@+id/llEmpty"
+                android:visibility="visible"
+                android:gravity="center"
+                android:paddingTop="@dimen/_50sdp"
+                android:paddingBottom="@dimen/_50sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivEmptyImage"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/comming_soon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/bg_leaderboard"
+        app:layout_constraintTop_toBottomOf="@id/recyclerViewTournament"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingStart="@dimen/_12sdp"
+            android:paddingEnd="@dimen/_12sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewBestGamesPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Other Popular Games"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_12ssp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewHomeGame"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:overScrollMode="never"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewBestGamesPlay"
+            tools:listitem="@layout/item_other_games_popular" />
+
+    </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
+

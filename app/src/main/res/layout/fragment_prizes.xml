@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorTransparent"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_65sdp"
+        android:clipToPadding="false"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewTrophy_"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_trophy_won"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewPrizePerBattle_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/montserrat"
+                android:text="Prize Per Battle"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewTrophy_" />
+
+            <LinearLayout
+                android:id="@+id/llPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/btn_bg_battle"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_20sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewPrizePerBattle_">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewRuppe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:src="@drawable/ic_cash_one" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewPoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:fontFamily="@font/berlin_sans_regular"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/_18ssp"
+                    tools:text="₹ 8" />
+
+
+            </LinearLayout>
+
+            <!--          <androidx.appcompat.widget.AppCompatImageView-->
+            <!--              android:id="@+id/imageViewRuppe"-->
+            <!--              app:layout_constraintHorizontal_chainStyle="packed"-->
+            <!--              app:layout_constraintStart_toStartOf="parent"-->
+            <!--              app:layout_constraintTop_toTopOf="@id/textViewWinPrice"-->
+            <!--              app:layout_constraintBottom_toBottomOf="@id/textViewWinPrice"-->
+            <!--              app:layout_constraintEnd_toStartOf="@id/textViewWinPrice"-->
+
+            <!--              android:layout_marginEnd="@dimen/_5sdp"-->
+            <!--              android:layout_width="wrap_content"-->
+            <!--              android:layout_height="wrap_content"-->
+            <!--              android:src="@drawable/ic_cash_one"/>-->
+
+            <!--            <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                android:id="@+id/textViewWinPrice"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/textViewPrizePerBattle_"-->
+            <!--                app:layout_constraintStart_toEndOf="@id/imageViewRuppe"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                android:text="₹ 5 Win"-->
+            <!--                android:fontFamily="@font/montserrat_bold"-->
+            <!--                android:textSize="@dimen/_18ssp"-->
+            <!--                android:textColor="@color/colorGreen"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"/>-->
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/_10sdp"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewPrizePerBattle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Prizes Per Battle"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewWinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="1 Winners"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_17ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/textViewPrizePerBattle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/textViewPrizePerBattle" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewTrophy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:src="@drawable/ic_trophy_won"
+                    app:layout_constraintBottom_toBottomOf="@id/textViewPrizePerBattle"
+                    app:layout_constraintEnd_toStartOf="@id/textViewWinner"
+                    app:layout_constraintTop_toTopOf="@id/textViewPrizePerBattle" />
+
+
+                <View
+                    android:id="@+id/viewLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@color/colorWhiteOpacity50"
+                    app:layout_constraintTop_toBottomOf="@id/imageViewTrophy" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@id/viewLine">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewBestGamesPlay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_24sdp"
+                            android:drawablePadding="@dimen/_4sdp"
+                            android:fontFamily="@font/montserrat"
+                            android:gravity="center_vertical"
+                            android:text="Rank"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/imageViewGrid"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_24sdp"
+                            android:fontFamily="@font/montserrat"
+                            android:text="Prize"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewPrizes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        android:overScrollMode="never"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:itemCount="10"
+                        tools:listitem="@layout/item_prizes" />
+                </LinearLayout>
+
+
+                <!--            <androidx.appcompat.widget.AppCompatImageView-->
+                <!--                android:id="@+id/imageViewTrophy"-->
+                <!--                app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                app:layout_constraintTop_toTopOf="parent"-->
+                <!--                android:layout_marginTop="@dimen/_15sdp"-->
+                <!--                app:layout_constraintStart_toStartOf="parent"-->
+                <!--                android:layout_width="@dimen/_80sdp"-->
+                <!--                android:layout_height="@dimen/_80sdp"-->
+                <!--                android:src="@drawable/ic_cup_winner"/>-->
+
+
+                <!--            <androidx.appcompat.widget.AppCompatTextView-->
+                <!--                android:text="Prize Per Battle"-->
+                <!--                android:layout_marginTop="@dimen/_8sdp"-->
+                <!--                android:id="@+id/textViewPrizePerBattle"-->
+                <!--                app:layout_constraintStart_toStartOf="parent"-->
+                <!--                app:layout_constraintTop_toBottomOf="@id/imageViewTrophy"-->
+                <!--                app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                android:fontFamily="@font/product_sans_regular"-->
+                <!--                android:textSize="@dimen/_12ssp"-->
+                <!--                android:textColor="@color/colorTextSecondary"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"/>-->
+
+                <!--            <androidx.appcompat.widget.AppCompatTextView-->
+                <!--                android:id="@+id/textViewWinPrice"-->
+                <!--                app:layout_constraintTop_toBottomOf="@id/textViewPrizePerBattle"-->
+                <!--                app:layout_constraintStart_toStartOf="parent"-->
+                <!--                app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                android:text="₹ 5 Win"-->
+                <!--                android:fontFamily="@font/product_sans_bold"-->
+                <!--                android:textSize="@dimen/_18ssp"-->
+                <!--                android:textColor="@color/colorBlue"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"/>-->
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

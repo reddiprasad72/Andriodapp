@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addMoneyMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/background_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/back_app"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@id/guidelineLogoEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineLogoStart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/layout_toolbar_title_back" />
+
+    <include layout="@layout/layout_guideline" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:alpha="0.25"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <View
+        android:id="@+id/viewBackAddMney"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@drawable/add_money_bg"
+        app:layout_constraintBottom_toTopOf="@id/textViewQuickOption"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewEnterAmountToAdd"
+        style="@style/fontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_enter_amount_to_add"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextAmount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextAmount"
+        style="@style/edtStyleCommon"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:fontFamily="@font/gill_sans_bold"
+        android:gravity="center"
+        android:hint="@string/hint_enter_amount"
+        android:inputType="number"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewBackAddMney"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/textViewEnterAmountToAdd" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewQuickOption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:fontFamily="@font/berlin_sans_regular"
+        android:paddingTop="@dimen/_10sdp"
+        android:text="@string/label_quick_option"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextAmount" />
+
+    <TextView
+        android:id="@+id/quick1"
+        style="@style/fontRegular"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/dimen_15dp"
+        android:layout_marginEnd="3dp"
+        android:background="@drawable/bg_edittext_white"
+        android:gravity="center"
+        android:text="₹ 100"
+        android:textColor="@color/colorText"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toStartOf="@id/quick2"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/textViewQuickOption" />
+
+    <TextView
+        android:id="@+id/quick2"
+        style="@style/fontRegular"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:background="@drawable/bg_edittext_white"
+        android:gravity="center"
+        android:text="₹ 200"
+        android:textColor="@color/colorText"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toStartOf="@id/quick3"
+        app:layout_constraintStart_toEndOf="@id/quick1"
+        app:layout_constraintTop_toBottomOf="@id/textViewQuickOption"
+        app:layout_constraintTop_toTopOf="@id/quick1" />
+
+    <TextView
+        android:id="@+id/quick3"
+        style="@style/fontRegular"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:background="@drawable/bg_edittext_white"
+        android:gravity="center"
+        android:text="₹ 1000"
+        android:textColor="@color/colorText"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toStartOf="@id/quick4"
+        app:layout_constraintStart_toEndOf="@id/quick2"
+        app:layout_constraintTop_toBottomOf="@id/textViewQuickOption"
+        app:layout_constraintTop_toTopOf="@id/quick1" />
+
+    <TextView
+        android:id="@+id/quick4"
+        style="@style/fontRegular"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginStart="3dp"
+        android:background="@drawable/bg_edittext_white"
+        android:gravity="center"
+        android:text="₹ 2000"
+        android:textColor="@color/colorText"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toEndOf="@id/quick3"
+        app:layout_constraintTop_toBottomOf="@id/textViewQuickOption"
+        app:layout_constraintTop_toTopOf="@id/quick1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/promoCode"
+        style="@style/tvStyleRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:paddingStart="@dimen/_2sdp"
+        android:paddingEnd="@dimen/_2sdp"
+        android:text="Have PromoCode?"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/quick1" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonPromoCode"
+        style="@style/btnStyleCommonSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:text="Apply Now"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/promoCode" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewPromoLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/label_apply_promocode"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_11ssp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonPromoCode" />
+
+    <View
+        android:id="@+id/viewBack1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@drawable/promocode_bg"
+        app:layout_constraintBottom_toBottomOf="@id/textViewAddPromocode"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/textViewPromoLabel" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewAddPromocode"
+        style="@style/fontRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/dimen_15dp"
+        android:paddingBottom="@dimen/_15sdp"
+        android:text="@string/label_add_promocode"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintEnd_toStartOf="@id/textViewApply"
+        app:layout_constraintStart_toStartOf="@id/viewBack1"
+        app:layout_constraintTop_toTopOf="@id/viewBack1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewApply"
+        style="@style/fontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:text="Apply"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="@id/viewBack1"
+        app:layout_constraintEnd_toStartOf="@id/imageViewClose"
+        app:layout_constraintStart_toEndOf="@id/textViewAddPromocode"
+        app:layout_constraintTop_toTopOf="@id/viewBack1" />
+
+    <ImageView
+        android:id="@+id/imageViewClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:src="@drawable/ic_close_svgrepo_com"
+        app:layout_constraintBottom_toBottomOf="@id/viewBack1"
+        app:layout_constraintEnd_toEndOf="@id/viewBack1"
+        app:layout_constraintTop_toTopOf="@id/viewBack1" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonProceed"
+        style="@style/btnStyleCommon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:text="@string/label_add_cash"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPromoCode" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tag"
+        style="@style/fontRegular"
+        android:layout_width="0dp"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:paddingBottom="@dimen/_20sdp"
+        android:text="@string/message_promocode"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/viewBack1" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupPromocode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="textViewAddPromocode,
+        imageViewClose,textViewApply,viewBack1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/battleView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:background="@drawable/battle_history_bg"
+    android:paddingBottom="12dp"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCenter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageViewGame"
+        android:layout_width="@dimen/_47sdp"
+        android:layout_height="@dimen/_47sdp"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:src="@drawable/sample_game"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/shapeableImageView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewGameName"
+        style="@style/fontRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_14sdp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="Archery"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintStart_toEndOf="@id/imageViewGame"
+        app:layout_constraintTop_toTopOf="@id/imageViewGame"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llEntryFee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/textViewDateTime"
+        app:layout_constraintStart_toStartOf="@id/textViewGameName"
+        app:layout_constraintTop_toBottomOf="@id/textViewGameName">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/berlin_sans_regular"
+            android:text="Entry Fee"
+            android:textColor="@color/text_heading_color"
+            android:textSize="@dimen/_10ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewfee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:fontFamily="@font/berlin_sans_regular"
+            android:textColor="@color/text_heading_color"
+            android:textSize="@dimen/_10ssp"
+            tools:text="₹50" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewDateTime"
+        style="@style/fontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/calender_icon"
+        android:drawablePadding="@dimen/_5sdp"
+        android:textColor="@color/text_heading_color"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewGame"
+        app:layout_constraintStart_toStartOf="@id/textViewGameName"
+        app:layout_constraintTop_toBottomOf="@id/llEntryFee"
+        tools:text="20-04-2021    12:40 PM" />
+
+    <View
+        android:id="@+id/viewLine"
+        android:layout_width="match_parent"
+        android:layout_height="0.05dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:alpha="0.5"
+        android:background="@color/text_heading_color"
+        app:layout_constraintTop_toBottomOf="@id/textViewDateTime" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewOne"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:src="@drawable/profile_dummy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/imageViewVS"
+        app:layout_constraintTop_toTopOf="@id/viewLine" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewCrownOne"
+        android:layout_width="@dimen/_16sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:src="@drawable/rank_one_crown"
+        app:layout_constraintBottom_toTopOf="@id/imageViewOne"
+        app:layout_constraintEnd_toEndOf="@id/imageViewOne"
+        app:layout_constraintStart_toStartOf="@id/imageViewOne" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewUserNameOne"
+        style="@style/fontRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:ellipsize="end"
+        android:gravity="end"
+        android:singleLine="true"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewPointOne"
+        app:layout_constraintEnd_toStartOf="@id/imageViewOne"
+        app:layout_constraintStart_toStartOf="@id/imageViewGame"
+        app:layout_constraintTop_toTopOf="@id/imageViewOne"
+        tools:text="NAZI_Gamer" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewPointOne"
+        style="@style/fontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewOne"
+        app:layout_constraintEnd_toEndOf="@id/textViewUserNameOne"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUserNameOne"
+        tools:text="47,850" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewTwo"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:src="@drawable/profile_dummy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageViewVS"
+        app:layout_constraintTop_toTopOf="@id/viewLine" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewCrownTwo"
+        android:layout_width="@dimen/_16sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:src="@drawable/rank_one_crown"
+        app:layout_constraintBottom_toTopOf="@id/imageViewTwo"
+        app:layout_constraintEnd_toEndOf="@id/imageViewTwo"
+        app:layout_constraintStart_toStartOf="@id/imageViewTwo" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewUserNameTwo"
+        style="@style/fontRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewPointTwo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageViewTwo"
+        app:layout_constraintTop_toTopOf="@id/imageViewTwo"
+        tools:text="Wincashr" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewPointTwo"
+        style="@style/fontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewTwo"
+        app:layout_constraintStart_toStartOf="@id/textViewUserNameTwo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUserNameTwo"
+        tools:text="47,850" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/imageViewVS"
+        style="@style/fontBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vs"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewOne"
+        app:layout_constraintEnd_toEndOf="@id/guidelineCenter"
+        app:layout_constraintStart_toStartOf="@id/guidelineCenter"
+        app:layout_constraintTop_toBottomOf="@id/viewLine"
+        app:layout_constraintTop_toTopOf="@+id/imageViewOne" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonAmount"
+        style="@style/btnStyleCommon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:text="@string/x_price_rupees"
+        android:textSize="@dimen/_9ssp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/viewLine"
+        app:layout_constraintDimensionRatio="16:5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent=".25" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewStatus"
+        android:layout_width="@dimen/_78sdp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_won_transaction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:fontFamily="@font/montserrat_bold"
+        android:includeFontPadding="false"
+        android:text="Lost"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_12ssp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewStatus"
+        app:layout_constraintEnd_toEndOf="@id/imageViewStatus"
+        app:layout_constraintStart_toStartOf="@id/imageViewStatus"
+        app:layout_constraintTop_toTopOf="@id/imageViewStatus" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewCancelled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:fontFamily="@font/montserrat_bold"
+        android:includeFontPadding="false"
+        android:text="Cancelled"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_12ssp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewStatus"
+        app:layout_constraintEnd_toEndOf="@id/imageViewStatus"
+        app:layout_constraintStart_toStartOf="@id/imageViewStatus"
+        app:layout_constraintTop_toTopOf="@id/imageViewStatus" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

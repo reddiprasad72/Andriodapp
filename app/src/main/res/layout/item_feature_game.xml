@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/_10sdp"
+    android:paddingEnd="@dimen/_10sdp">
+
+    <!--    <androidx.appcompat.widget.AppCompatImageView-->
+    <!--        android:id="@+id/imgBanner"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_marginStart="@dimen/_10sdp"-->
+    <!--        android:layout_marginEnd="@dimen/_10sdp"-->
+    <!--        android:scaleType="fitXY"-->
+    <!--        android:src="@drawable/ic_banner_one"-->
+    <!--        android:layout_height="@dimen/_120sdp"/>-->
+
+
+<!--    <com.makeramen.roundedimageview.RoundedImageView-->
+<!--        android:id="@+id/imageViewBlur"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="@dimen/_90sdp"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        app:riv_border_color="#333333"-->
+<!--        app:riv_border_width="@dimen/_1sdp"-->
+<!--        app:riv_corner_radius="7dp"-->
+<!--        app:riv_mutate_background="true"-->
+<!--        app:riv_oval="false"-->
+<!--        app:riv_tile_mode="clamp"-->
+<!--        tools:src="@drawable/b_four" />-->
+
+
+
+
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewBlur"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_rounded_transparent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <!--    <androidx.appcompat.widget.AppCompatImageView-->
+    <!--        android:id="@+id/imageViewBlur"-->
+    <!--        android:src="@drawable/game_one"-->
+
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="@dimen/_130sdp"/>-->
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgBanner"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_width="@dimen/_65sdp"
+        android:layout_height="@dimen/_65sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:scaleType="centerCrop"
+
+        app:layout_constraintBottom_toBottomOf="@id/imageViewBlur"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageViewBlur" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewGameName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:fontFamily="@font/berlin_sans_regular"
+        android:includeFontPadding="false"
+        tools:text="8 Ball Pool"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_18ssp"
+        app:layout_constraintBottom_toTopOf="@id/textViewTotalPlayer"
+        app:layout_constraintStart_toEndOf="@id/imgBanner"
+        app:layout_constraintTop_toTopOf="@id/imgBanner" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTotalPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:includeFontPadding="false"
+        android:text="Battles &amp; Tournaments"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_12ssp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@id/textViewGameName"
+        app:layout_constraintTop_toBottomOf="@id/textViewGameName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvComingSoon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Coming Soon"
+        android:fontFamily="@font/berlin_sans_regular"
+        android:textAllCaps="false"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:minHeight="@dimen/dimen_0dp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_15sdp"
+        android:background="@drawable/carousel_btn_radius_32"
+        app:layout_constraintBottom_toBottomOf="@id/imgBanner"
+        app:layout_constraintStart_toStartOf="@id/textViewGameName"
+        app:layout_constraintTop_toBottomOf="@id/textViewTotalPlayer"
+        android:layout_marginBottom="@dimen/_10sdp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonPlayNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Play Now"
+        android:visibility="visible"
+        android:fontFamily="@font/berlin_sans_regular"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:minHeight="@dimen/dimen_0dp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_15sdp"
+        android:background="@drawable/carousel_btn_radius_32"
+        app:layout_constraintBottom_toBottomOf="@id/imgBanner"
+        app:layout_constraintStart_toStartOf="@id/textViewGameName"
+        app:layout_constraintTop_toBottomOf="@id/textViewTotalPlayer"
+        android:layout_marginBottom="@dimen/_10sdp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/background_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/back_app"
+        android:scaleType="fitXY"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@id/guidelineLogoEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineLogoStart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include layout="@layout/layout_guideline" />
+
+    <include
+        android:id="@+id/tool"
+        layout="@layout/layout_toolbar_title_back"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:alpha="0.25"
+        android:visibility="gone"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tool" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/tabsBack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/rectangle_tabs"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/tool" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tab1_inactive"
+        style="@style/tvStyleRegular"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="@dimen/dimen_15dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/daily"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="@id/tabsBack"
+        app:layout_constraintEnd_toStartOf="@id/tab2_active"
+        app:layout_constraintStart_toStartOf="@id/tabsBack"
+        app:layout_constraintTop_toTopOf="@id/tabsBack" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tab2_inactive"
+        style="@style/tvStyleRegular"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="@dimen/dimen_15dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/weekly"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="@id/tabsBack"
+        app:layout_constraintEnd_toStartOf="@id/tab3_active"
+        app:layout_constraintStart_toEndOf="@id/tab1_active"
+        app:layout_constraintTop_toTopOf="@id/tabsBack" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tab3_inactive"
+        style="@style/tvStyleRegular"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="@dimen/dimen_15dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/monthly"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="@id/tabsBack"
+        app:layout_constraintEnd_toEndOf="@id/tabsBack"
+        app:layout_constraintStart_toEndOf="@id/tab2_active"
+        app:layout_constraintTop_toTopOf="@id/tabsBack" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tab1_active"
+        style="@style/btnStyleTabActive"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        android:text="@string/daily"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/tabsBack"
+        app:layout_constraintEnd_toStartOf="@id/tab2_active"
+        app:layout_constraintStart_toStartOf="@id/tabsBack"
+        app:layout_constraintTop_toTopOf="@id/tabsBack" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tab2_active"
+        style="@style/btnStyleTabActive"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/weekly"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/tabsBack"
+        app:layout_constraintEnd_toStartOf="@id/tab3_active"
+        app:layout_constraintStart_toEndOf="@id/tab1_active"
+        app:layout_constraintTop_toTopOf="@id/tabsBack" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tab3_active"
+        style="@style/btnStyleTabActive"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/monthly"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/tabsBack"
+        app:layout_constraintEnd_toEndOf="@id/tabsBack"
+        app:layout_constraintStart_toEndOf="@id/tab2_active"
+        app:layout_constraintTop_toTopOf="@id/tabsBack" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@color/colorTransparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabsBack"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="52dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/row"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_10sdp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageViewGames"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_70sdp"
+        android:src="@drawable/sample_game"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/shapeableImageView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewGameName"
+        style="@style/fontRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/_8sdp"
+        android:text="Bubble Shooter"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="@id/imageViewGames"
+        app:layout_constraintStart_toStartOf="@id/imageViewGames"
+        app:layout_constraintTop_toBottomOf="@id/imageViewGames" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewOnline"
+        style="@style/fontRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:alpha="0.6"
+        android:text="1.2 Online"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintEnd_toEndOf="@id/imageViewGames"
+        app:layout_constraintStart_toStartOf="@id/imageViewGames"
+        app:layout_constraintTop_toBottomOf="@id/textViewGameName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

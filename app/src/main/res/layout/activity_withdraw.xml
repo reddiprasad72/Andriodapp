@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/background_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/back_app"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@id/guidelineLogoEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineLogoStart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include layout="@layout/layout_guideline" />
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/layout_toolbar_title_back" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:alpha="0.25"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:paddingBottom="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <include layout="@layout/layout_guideline" />
+
+            <View
+                android:id="@+id/walletBack"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/battle_history_bg"
+                app:layout_constraintDimensionRatio="19:9"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img"
+                android:layout_width="@dimen/_47sdp"
+                android:layout_height="@dimen/_47sdp"
+                android:src="@drawable/money_img"
+                app:layout_constraintBottom_toTopOf="@id/textViewAmount"
+                app:layout_constraintEnd_toEndOf="@id/walletBack"
+                app:layout_constraintStart_toStartOf="@id/walletBack"
+                app:layout_constraintTop_toTopOf="@id/walletBack"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewAmount"
+                style="@style/fontBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/x_price_rupees"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_25ssp"
+                app:layout_constraintBottom_toTopOf="@id/textViewTotalBalanceLabel"
+                app:layout_constraintEnd_toEndOf="@id/walletBack"
+                app:layout_constraintStart_toStartOf="@id/walletBack"
+                app:layout_constraintTop_toBottomOf="@id/img"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTotalBalanceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/berlin_sans_regular"
+                android:text="@string/label_total_balance"
+                android:textColor="@color/text_content_color"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintBottom_toBottomOf="@id/walletBack"
+                app:layout_constraintEnd_toEndOf="@id/walletBack"
+                app:layout_constraintStart_toStartOf="@id/walletBack"
+                app:layout_constraintTop_toBottomOf="@id/textViewAmount"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/labelWallet"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/hint_enter_amount_to_withdraw"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_11ssp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/walletBack"
+                app:layout_constraintTop_toBottomOf="@id/walletBack" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextAmount"
+                style="@style/edtStyleCommon"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/berlin_sans_regular"
+                android:gravity="center|start"
+                android:hint="@string/hint_enter_amount_str"
+                android:inputType="number"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/walletBack" />
+
+            <LinearLayout
+                android:id="@+id/llAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/editTextAmount">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/fontRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You will get"
+                    android:textColor="@color/text_heading_color"
+                    android:textSize="@dimen/_11ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/editTextAmountCharge"
+                    style="@style/fontBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:text="₹ 0"
+                    android:textColor="@color/text_heading_color"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewReciveType"
+                    style="@style/fontRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:text="to your bank account."
+                    android:textColor="@color/text_heading_color"
+                    android:textSize="@dimen/_11ssp" />
+
+            </LinearLayout>
+
+
+            <View
+                android:id="@+id/viewWithdraw"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/withdraw_option_bg"
+                app:layout_constraintBottom_toBottomOf="@id/dummy"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/llAmount" />
+
+            <CheckBox
+                android:id="@+id/checkboxBank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/radio_withdraw_selector"
+                android:button="@null"
+                android:checked="true"
+                app:layout_constraintBottom_toBottomOf="@id/imgBank"
+                app:layout_constraintEnd_toEndOf="@id/viewWithdraw"
+                app:layout_constraintTop_toTopOf="@id/imgBank" />
+
+            <CheckBox
+                android:id="@+id/checkboxUPI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/radio_withdraw_selector"
+                android:button="@null"
+                android:checked="false"
+                app:layout_constraintBottom_toBottomOf="@id/imgUPI"
+                app:layout_constraintEnd_toEndOf="@id/viewWithdraw"
+                app:layout_constraintTop_toTopOf="@id/imgUPI" />
+
+            <CheckBox
+                android:id="@+id/checkboxPaytm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/radio_withdraw_selector"
+                android:button="@null"
+                android:checked="false"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/imgPaytm"
+                app:layout_constraintEnd_toEndOf="@id/viewWithdraw"
+                app:layout_constraintTop_toTopOf="@id/imgPaytm" />
+
+            <View
+                android:id="@+id/viewWithdrawTop"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/withdraw_text_layer"
+                app:layout_constraintBottom_toBottomOf="@id/labelWithdrawAmt"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/llAmount" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/labelWithdrawAmt"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="Withdraw Amount With"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toTopOf="@+id/imgBank"
+                app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toTopOf="@+id/viewWithdraw" />
+
+            <com.bluboy.android.presentation.utility.CircleImageView
+                android:id="@+id/imgBank"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:src="@drawable/bank_icon"
+                app:layout_constraintStart_toStartOf="@id/viewWithdrawTop"
+                app:layout_constraintTop_toBottomOf="@id/viewWithdrawTop"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtBank"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:text="@string/bank_transfer"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toTopOf="@id/textViewBankSuccessRate"
+                app:layout_constraintStart_toEndOf="@id/imgBank"
+                app:layout_constraintTop_toTopOf="@id/imgBank"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewBankSuccessRate"
+                style="@style/fontRegular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8dp"
+                android:text="@string/label_deposite_cash"
+                android:textColor="@color/colorTerms"
+                android:textSize="@dimen/_11ssp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/imgBank"
+                app:layout_constraintEnd_toStartOf="@id/checkboxBank"
+                app:layout_constraintStart_toStartOf="@id/txtBank"
+                app:layout_constraintTop_toBottomOf="@id/txtBank"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewUpiSuccessRate"
+                style="@style/fontRegular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8dp"
+                android:text="@string/label_deposite_cash"
+                android:textColor="@color/colorTerms"
+                android:textSize="@dimen/_11ssp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/imgUPI"
+                app:layout_constraintEnd_toStartOf="@id/checkboxUPI"
+                app:layout_constraintStart_toStartOf="@id/txtUPI"
+                app:layout_constraintTop_toBottomOf="@id/txtUPI"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:alpha="0.2"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/viewWithdraw"
+                app:layout_constraintStart_toStartOf="@id/viewWithdraw"
+                app:layout_constraintTop_toBottomOf="@id/imgBank" />
+
+            <com.bluboy.android.presentation.utility.CircleImageView
+                android:id="@+id/imgUPI"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:src="@drawable/bheem_upi"
+                app:layout_constraintStart_toStartOf="@id/viewWithdraw"
+                app:layout_constraintTop_toBottomOf="@id/divider2"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtUPI"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:text="UPI Transfer"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="@id/imgUPI"
+                app:layout_constraintStart_toEndOf="@id/imgUPI"
+                app:layout_constraintTop_toTopOf="@id/imgUPI" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtPaytm"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:text="Paytm Wallet"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_13ssp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/imgPaytm"
+                app:layout_constraintStart_toEndOf="@id/imgPaytm"
+                app:layout_constraintTop_toTopOf="@id/imgPaytm" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:alpha="0.2"
+                android:background="@color/white"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/viewWithdraw"
+                app:layout_constraintStart_toStartOf="@id/viewWithdraw"
+                app:layout_constraintTop_toBottomOf="@id/imgUPI" />
+
+            <com.bluboy.android.presentation.utility.CircleImageView
+                android:id="@+id/imgPaytm"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:src="@drawable/paytm"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/viewWithdraw"
+                app:layout_constraintTop_toBottomOf="@id/divider3"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <View
+                android:id="@+id/dummy"
+                android:layout_width="1dp"
+                android:layout_height="@dimen/_15sdp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/imgPaytm"
+                app:layout_constraintTop_toBottomOf="@id/imgPaytm" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupBank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="imgBank,imgUPI,divider2,divider3,txtBank,txtUPI,checkboxBank,checkboxUPI" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupPaytm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonWithDrawMoney"
+        style="@style/btnStyleCommon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:text="@string/button_withdraw_money"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:background="@drawable/promocode_bg"
+    android:paddingVertical="@dimen/_10sdp">
+
+    <include layout="@layout/layout_guideline" />
+
+    <View
+        android:id="@+id/viewBack1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/promocode_bg"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/textViewDateTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        style="@style/fontRegular"
+        android:paddingEnd="5dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/textViewAmount"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:text="@string/hint_name"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintStart_toStartOf="@id/viewBack1"
+        app:layout_constraintTop_toTopOf="@id/viewBack1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/orderId"
+        style="@style/fontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:text="@string/label_deposite_cash"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_12ssp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/viewBack1"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewDateTime"
+        style="@style/fontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="5dp"
+        android:drawableStart="@drawable/calender_icon"
+        android:drawablePadding="@dimen/_5sdp"
+        android:text="time"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintStart_toStartOf="@id/viewBack1"
+        app:layout_constraintTop_toBottomOf="@id/orderId" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewWithdrawFailedReason"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:ellipsize="end"
+        android:fontFamily="@font/montserrat"
+        android:maxLines="2"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_12ssp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewDateTime" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/textViewStatus"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:src="@drawable/gift_icon"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewDateTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:fontFamily="@font/berlin_sans_regular"
+        android:includeFontPadding="false"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_18ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewDateTime"
+        app:layout_constraintEnd_toStartOf="@+id/textViewStatus"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="+ ₹ 10" />
+
+
+    <TextView
+        android:id="@+id/textViewAmount2"
+        style="@style/btnStyleYellow"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:text="@string/x_price_rupees"
+        android:textSize="@dimen/_9ssp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/viewBack1"
+        app:layout_constraintDimensionRatio="16:5"
+        app:layout_constraintEnd_toEndOf="@id/viewBack1"
+        app:layout_constraintTop_toTopOf="@id/viewBack1"
+        app:layout_constraintWidth_percent=".25" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

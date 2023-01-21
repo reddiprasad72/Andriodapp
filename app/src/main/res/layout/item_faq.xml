@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintFAQ"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:paddingBottom="@dimen/_10sdp">
+
+    <View
+        android:id="@+id/rowBack"
+        android:layout_width="@dimen/dimen_0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_btn_small_radial"
+        app:layout_constraintBottom_toBottomOf="@id/textViewTitleAns"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/rowBackTop"
+        android:layout_width="@dimen/dimen_0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/faq_top_corner"
+        app:layout_constraintBottom_toBottomOf="@id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTitleQue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/berlin_sans_regular"
+        android:gravity="start"
+        android:text="@string/dummy_lorem_ipsum"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintEnd_toStartOf="@id/imageViewOpen"
+        app:layout_constraintStart_toStartOf="@id/rowBack"
+        app:layout_constraintTop_toTopOf="@id/rowBack" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewOpen"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginEnd="12dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/faq_open"
+        app:layout_constraintBottom_toBottomOf="@id/textViewTitleQue"
+        app:layout_constraintEnd_toEndOf="@id/rowBack"
+        app:layout_constraintTop_toTopOf="@id/textViewTitleQue" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewClose"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginEnd="12dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/faq_close"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/textViewTitleQue"
+        app:layout_constraintEnd_toEndOf="@id/rowBack"
+        app:layout_constraintTop_toTopOf="@id/textViewTitleQue" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:alpha="0.5"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/rowBack"
+        app:layout_constraintStart_toStartOf="@id/rowBack"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitleQue" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTitleAns"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/berlin_sans_regular"
+        android:gravity="start"
+        android:paddingBottom="18dp"
+        android:text="@string/dummy_lorem_ipsum"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintEnd_toEndOf="@id/rowBack"
+        app:layout_constraintStart_toStartOf="@id/rowBack"
+        app:layout_constraintTop_toBottomOf="@id/divider" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

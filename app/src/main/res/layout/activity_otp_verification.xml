@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black"
+    tools:context=".presentation.loginsignup.activities.OtpVerificationActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/background_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/back_app"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@id/guidelineLogoEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineLogoStart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/tool"
+        layout="@layout/layout_toolbar_title_back" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tool">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include layout="@layout/layout_guideline" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewLogo"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="@dimen/dimen_0dp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:src="@drawable/logo_bluboy"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="@id/guidelineLogoEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineLogoStart"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".4" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewVerify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/berlin_sans_bold"
+                android:text="@string/verify_sign_in"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/guidelineCenter" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textFourDigit"
+                style="@style/tvStyleRegular"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/label_four_digit"
+                android:textColor="@color/text_content_color"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/textViewVerify"
+                app:layout_constraintTop_toBottomOf="@id/textViewVerify" />
+
+            <com.bluboy.android.presentation.utility.PinViewMobile
+                android:id="@+id/pinView"
+                style="@style/PinWidget.PinView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:itemBackground="@drawable/bg_edittext_white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textFourDigit">
+
+                <requestFocus />
+            </com.bluboy.android.presentation.utility.PinViewMobile>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvResendOtp"
+                android:layout_width="wrap_content"
+                style="@style/fontRegular"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:enabled="false"
+                android:padding="@dimen/_3sdp"
+                android:text="@string/resend_now_otp"
+                android:textColor="@color/colorWhiteOpacity50"
+                android:textSize="@dimen/_13ssp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pinView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewOtpLabel"
+                style="@style/tvStyleRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:text="Resend Code in"
+                android:textColor="@color/text_heading_color"
+                android:visibility="visible"
+                app:layout_constraintEnd_toStartOf="@id/textViewOtp"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvResendOtp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewOtp"
+                style="@style/tvStyleBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="00:26"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/textViewOtpLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/textViewOtpLabel"
+                app:layout_constraintTop_toTopOf="@id/textViewOtpLabel" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonSubmit"
+                style="@style/btnStyleCommon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/label_verify"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/textViewOtpLabel" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

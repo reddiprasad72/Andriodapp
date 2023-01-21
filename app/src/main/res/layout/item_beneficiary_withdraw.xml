@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintBank"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.bluboy.android.presentation.utility.CircleImageView
+        android:id="@+id/imageViewBank"
+        android:layout_width="@dimen/_37sdp"
+        android:layout_height="@dimen/_37sdp"
+        android:layout_marginStart="@dimen/_13sdp"
+        android:src="@drawable/bank_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewBankAcc"
+        style="@style/fontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:text="Bank Acc."
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewBank"
+        app:layout_constraintStart_toStartOf="@id/textViewAccountNumber"
+        app:layout_constraintTop_toBottomOf="@id/textViewAccountNumber" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewAccountName"
+        style="@style/fontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14sp"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toTopOf="@id/textViewAccountNumber"
+        app:layout_constraintStart_toEndOf="@id/imageViewBank"
+        app:layout_constraintTop_toTopOf="@id/imageViewBank"
+        tools:text="name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewAccountNumber"
+        style="@style/fontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14sp"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toTopOf="@id/textViewBankAcc"
+        app:layout_constraintStart_toEndOf="@id/imageViewBank"
+        app:layout_constraintTop_toBottomOf="@id/textViewAccountName"
+        tools:text="6544124897230" />
+
+    <View
+        android:id="@+id/viewLine"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:alpha="0.25"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageViewBank" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

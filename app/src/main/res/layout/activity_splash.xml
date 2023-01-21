@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black"
+    tools:context=".presentation.splash.SplashActivity">
+
+    <include layout="@layout/layout_guideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <com.bluboy.android.presentation.utility.CircleImageView
+        android:id="@+id/logoBack"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.2"
+        android:elevation="5dp"
+        android:padding="5dp"
+        android:src="@color/colorTransparent"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline25"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toTopOf="@id/guideline25"
+        app:layout_constraintWidth_percent=".65" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/back_app" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/logo_bluboy"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@id/logoBack"
+        app:layout_constraintStart_toStartOf="@id/logoBack"
+        app:layout_constraintTop_toTopOf="@id/logoBack" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAppVersion"
+        style="@style/tvStyleRegular"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

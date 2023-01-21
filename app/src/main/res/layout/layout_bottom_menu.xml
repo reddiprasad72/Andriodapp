@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_home_nav_bg">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_55sdp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include layout="@layout/layout_guideline" />
+
+        <View
+            android:id="@+id/viewSpin"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toStartOf="@id/viewAddMoney"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:id="@+id/viewAddMoney"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toStartOf="@id/viewHome"
+            app:layout_constraintStart_toEndOf="@id/viewSpin" />
+
+        <View
+            android:id="@+id/viewHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toStartOf="@id/viewWallet"
+            app:layout_constraintStart_toEndOf="@id/viewAddMoney" />
+
+        <View
+            android:id="@+id/viewWallet"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toStartOf="@id/viewBonus"
+            app:layout_constraintStart_toEndOf="@id/viewHome" />
+
+        <View
+            android:id="@+id/viewBonus"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/viewWallet" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bottomNavSpinner"
+            android:layout_width="@dimen/_31sdp"
+            android:layout_height="@dimen/_31sdp"
+            android:src="@drawable/spinner_bottom_nav"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/viewSpin"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/viewSpin"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bottomNavAddMoney"
+            android:layout_width="@dimen/_31sdp"
+            android:layout_height="@dimen/_31sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/money_bottom_nav"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/viewAddMoney"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/viewAddMoney"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bottomNavHome"
+            android:layout_width="@dimen/_31sdp"
+            android:layout_height="@dimen/_31sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/home_bottom_nav"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/viewHome"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/viewHome"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bottomNavWallet"
+            android:layout_width="@dimen/_31sdp"
+            android:layout_height="@dimen/_31sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/wallet_bottom_nav"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/viewWallet"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/viewWallet"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bottomNavGift"
+            android:layout_width="@dimen/_31sdp"
+            android:layout_height="@dimen/_31sdp"
+            android:src="@drawable/gift_bottom_nav"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/viewBonus"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/viewBonus"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

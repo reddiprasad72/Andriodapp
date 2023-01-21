@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/background_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/back_app"
+        android:scaleType="fitXY"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@id/guidelineLogoEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineLogoStart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/layout_toolbar_title_back" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:alpha="0.25"
+        android:visibility="gone"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+
+
+    <include layout="@layout/layout_guideline" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:paddingBottom="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/viewBackAddMney"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/add_money_bg"
+                app:layout_constraintBottom_toTopOf="@id/labelWallet"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewEnterAmountToAdd"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/label_amount_to_add"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewAmount"
+                style="@style/edtStyleCommon"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/gill_sans_bold"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:gravity="center"
+                android:hint="@string/hint_enter_amount"
+                android:text="@string/x_price_rupees"
+                android:textSize="21sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewEnterAmountToAdd" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/labelWallet"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/label_Wallet"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewAmount" />
+
+            <View
+                android:id="@+id/viewPaytm"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/promocode_bg"
+                app:layout_constraintBottom_toBottomOf="@id/dummyPay"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/labelWallet" />
+
+            <com.bluboy.android.presentation.utility.CircleImageView
+                android:id="@+id/imgPaytm"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:src="@drawable/paytm"
+                app:layout_constraintStart_toStartOf="@id/viewPaytm"
+                app:layout_constraintTop_toTopOf="@id/viewPaytm"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <View
+                android:id="@+id/dummyPay"
+                android:layout_width="1dp"
+                android:layout_height="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="@id/imgPaytm"
+                app:layout_constraintTop_toBottomOf="@id/imgPaytm" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtPaytm"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:text="@string/label_paytm"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="@id/viewPaytm"
+                app:layout_constraintStart_toEndOf="@id/imgPaytm"
+                app:layout_constraintTop_toTopOf="@id/viewPaytm" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btPaytm"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:gravity="center"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/dimen_15dp"
+                android:text="Pay"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintBottom_toBottomOf="@id/viewPaytm"
+                app:layout_constraintEnd_toEndOf="@id/viewPaytm"
+                app:layout_constraintTop_toTopOf="@id/viewPaytm" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/labelUPI"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/other_upi_options"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewPaytm" />
+
+            <View
+                android:id="@+id/viewUPI"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/promocode_bg"
+                app:layout_constraintBottom_toBottomOf="@id/dummyUPI"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/labelUPI" />
+
+            <View
+                android:id="@+id/dummyUPI"
+                android:layout_width="1dp"
+                android:layout_height="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="@id/imgUPI"
+                app:layout_constraintTop_toBottomOf="@id/imgUPI" />
+
+            <com.bluboy.android.presentation.utility.CircleImageView
+                android:id="@+id/imgUPI"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:src="@drawable/bheem_upi"
+                app:layout_constraintStart_toStartOf="@id/viewUPI"
+                app:layout_constraintTop_toTopOf="@id/viewUPI"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtUPI"
+                style="@style/fontRegular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:text="Add VPA or UPI ID"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="@id/viewUPI"
+                app:layout_constraintEnd_toStartOf="@id/btUPI"
+                app:layout_constraintStart_toEndOf="@id/imgUPI"
+                app:layout_constraintTop_toTopOf="@id/viewUPI" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btUPI"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/dimen_15dp"
+                android:text="Pay"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintBottom_toBottomOf="@id/viewUPI"
+                app:layout_constraintEnd_toEndOf="@id/viewUPI"
+                app:layout_constraintStart_toEndOf="@id/txtUPI"
+                app:layout_constraintTop_toTopOf="@id/viewUPI" />
+
+
+            <View
+                android:id="@+id/viewHypto"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/promocode_bg"
+                app:layout_constraintBottom_toBottomOf="@id/dummyHypto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewUPI" />
+
+            <View
+                android:id="@+id/dummyHypto"
+                android:layout_width="1dp"
+                android:layout_height="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="@id/imgHypto"
+                app:layout_constraintTop_toBottomOf="@id/imgHypto" />
+
+            <com.bluboy.android.presentation.utility.CircleImageView
+                android:id="@+id/imgHypto"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:src="@drawable/bheem_upi"
+                app:layout_constraintStart_toStartOf="@id/viewHypto"
+                app:layout_constraintTop_toTopOf="@id/viewHypto"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtHypto"
+                style="@style/fontRegular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:text="Add VPA or UPI ID"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="@id/viewHypto"
+                app:layout_constraintEnd_toStartOf="@id/btHypto"
+                app:layout_constraintStart_toEndOf="@id/imgHypto"
+                app:layout_constraintTop_toTopOf="@id/viewHypto" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btHypto"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/dimen_15dp"
+                android:text="Pay (Hypto)"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintBottom_toBottomOf="@id/viewHypto"
+                app:layout_constraintEnd_toEndOf="@id/viewHypto"
+                app:layout_constraintStart_toEndOf="@id/txtHypto"
+                app:layout_constraintTop_toTopOf="@id/viewHypto" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/labelCard"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/credit_debit_card"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewHypto" />
+
+            <View
+                android:id="@+id/viewCard"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/promocode_bg"
+                app:layout_constraintBottom_toBottomOf="@id/dummyCard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/labelCard" />
+
+            <View
+                android:id="@+id/dummyCard"
+                android:layout_width="1dp"
+                android:layout_height="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="@id/imgCard"
+                app:layout_constraintTop_toBottomOf="@id/imgCard" />
+
+            <com.bluboy.android.presentation.utility.CircleImageView
+                android:id="@+id/imgCard"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:src="@drawable/ic_mastercard"
+                app:layout_constraintStart_toStartOf="@id/viewCard"
+                app:layout_constraintTop_toTopOf="@id/viewCard"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtCard"
+                style="@style/fontRegular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:text="@string/add_new_credit_debit_card"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="@id/viewCard"
+                app:layout_constraintEnd_toStartOf="@id/btCard"
+                app:layout_constraintStart_toEndOf="@id/imgCard"
+                app:layout_constraintTop_toTopOf="@id/viewCard" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btCard"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/dimen_15dp"
+                android:text="Pay"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintBottom_toBottomOf="@id/viewCard"
+                app:layout_constraintEnd_toEndOf="@id/viewCard"
+                app:layout_constraintStart_toEndOf="@id/txtCard"
+                app:layout_constraintTop_toTopOf="@id/viewCard" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupPaytm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="viewPaytm,dummyPay,btPaytm,imgPaytm,txtPaytm" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupUPI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="viewUPI,dummyUPI,btUPI,imgUPI,txtUPI" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupHypto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="viewHypto,dummyHypto,btHypto,imgHypto,txtHypto" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="viewCard,dummyCard,btCard,imgCard,txtCard" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/constraintCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="labelCard,groupCard" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/constraintPaytm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="labelWallet,groupPaytm" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/constraintHypto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="labelUPI,groupUPI,groupHypto" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_guideline" />
+
+    <RelativeLayout
+        android:id="@+id/mLoader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/progress"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollViewLeaderBoard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/topThree"
+                    layout="@layout/layout_top_three" />
+
+                <include
+                    android:id="@+id/ownRankLayout"
+                    layout="@layout/item_leaderboard_own_rank"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/constraintRank"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcv_leaderboard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:overScrollMode="never"
+                        android:paddingHorizontal="@dimen/_15sdp"
+                        android:paddingBottom="@dimen/_80sdp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_leaderboard" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/llEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <include layout="@layout/empty_layout" />
+    </LinearLayout>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/mShimmerLeaderboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@color/colorTransparent"
+        android:visibility="visible"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/textViewPopularGame">
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:paddingBottom="@dimen/_25sdp">
+
+
+                <View
+                    android:id="@+id/v1"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:background="@drawable/bg_home_empty"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:background="@drawable/bg_home_empty_square"
+                    app:layout_constraintEnd_toEndOf="@id/v1"
+                    app:layout_constraintStart_toStartOf="@id/v1"
+                    app:layout_constraintTop_toBottomOf="@id/v1" />
+
+                <View
+                    android:id="@+id/v2"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginStart="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:background="@drawable/bg_home_empty"
+                    app:layout_constraintStart_toEndOf="@id/v1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:background="@drawable/bg_home_empty_square"
+                    app:layout_constraintEnd_toEndOf="@id/v2"
+                    app:layout_constraintStart_toStartOf="@id/v2"
+                    app:layout_constraintTop_toBottomOf="@id/v2" />
+
+
+                <View
+                    android:id="@+id/v3"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_35sdp"
+                    android:background="@drawable/bg_home_empty"
+                    app:layout_constraintEnd_toStartOf="@id/v1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:background="@drawable/bg_home_empty_square"
+                    app:layout_constraintEnd_toEndOf="@id/v3"
+                    app:layout_constraintStart_toStartOf="@id/v3"
+                    app:layout_constraintTop_toBottomOf="@id/v3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <include layout="@layout/shimmer_battle" />
+
+            <include layout="@layout/shimmer_battle" />
+
+            <include layout="@layout/shimmer_battle" />
+
+            <include layout="@layout/shimmer_battle" />
+
+            <include layout="@layout/shimmer_battle" />
+
+            <include layout="@layout/shimmer_battle" />
+
+            <include layout="@layout/shimmer_battle" />
+
+            <include layout="@layout/shimmer_battle" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <LinearLayout
+        android:id="@+id/progressBottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_90sdp"
+        android:background="@color/colorWhite"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:visibility="visible"
+            app:indicatorColor="@color/colorPrimaryDark"
+            app:indicatorName="BallPulseIndicator" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

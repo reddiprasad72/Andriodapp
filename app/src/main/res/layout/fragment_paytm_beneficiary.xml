@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".presentation.wallet.BeneficiaryAddActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_20sdp">
+
+            <include layout="@layout/layout_guideline" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/labelNick"
+                style="@style/tvStyleRegular"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/hint_beneficiary_nickname"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/texViewMessageD" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etAccountantNickName"
+                style="@style/edtStyleCommon"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:digits="@string/digit_alphaNum"
+                android:hint="@string/hint_beneficiary_nickname"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="@id/labelNick"
+                app:layout_constraintStart_toStartOf="@id/labelNick"
+                app:layout_constraintTop_toBottomOf="@id/labelNick" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/labelName"
+                style="@style/tvStyleRegular"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/label_account_holder_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="@id/labelNick"
+                app:layout_constraintStart_toStartOf="@id/labelNick"
+                app:layout_constraintTop_toBottomOf="@id/etAccountantNickName" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etAccountantName"
+                style="@style/edtStyleCommon"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:digits="@string/digit_name"
+                android:hint="@string/hint_name"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="@id/labelNick"
+                app:layout_constraintStart_toStartOf="@id/labelNick"
+                app:layout_constraintTop_toBottomOf="@id/labelName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/labelBankName"
+                style="@style/tvStyleRegular"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/paytm_number"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="@id/labelNick"
+                app:layout_constraintStart_toStartOf="@id/labelNick"
+                app:layout_constraintTop_toBottomOf="@id/etAccountantName" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etPaytm"
+                style="@style/edtStyleCommon"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:hint="@string/paytm_number"
+                android:inputType="number"
+                android:maxLength="10"
+                app:layout_constraintEnd_toEndOf="@id/labelNick"
+                app:layout_constraintStart_toStartOf="@id/labelNick"
+                app:layout_constraintTop_toBottomOf="@id/labelBankName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/labelAddress"
+                style="@style/tvStyleRegular"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/hint_address"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="@id/labelNick"
+                app:layout_constraintStart_toStartOf="@id/labelNick"
+                app:layout_constraintTop_toBottomOf="@id/etPaytm" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etAddress"
+                style="@style/edtStyleCommon"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:hint="@string/hint_address"
+                android:inputType="textNoSuggestions|textFilter"
+                app:layout_constraintEnd_toEndOf="@id/labelNick"
+                app:layout_constraintStart_toStartOf="@id/labelNick"
+                app:layout_constraintTop_toBottomOf="@id/labelAddress" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/labelCity"
+                style="@style/tvStyleRegular"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/hint_city"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="@id/labelNick"
+                app:layout_constraintStart_toStartOf="@id/labelNick"
+                app:layout_constraintTop_toBottomOf="@id/etAddress" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etCity"
+                style="@style/edtStyleCommon"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:digits="@string/digit_alpha"
+                android:hint="@string/hint_city"
+                android:inputType="textNoSuggestions|textFilter"
+                app:layout_constraintEnd_toEndOf="@id/labelNick"
+                app:layout_constraintStart_toStartOf="@id/labelNick"
+                app:layout_constraintTop_toBottomOf="@id/labelCity" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/labelState"
+                style="@style/tvStyleRegular"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/hint_state"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="@id/labelNick"
+                app:layout_constraintStart_toStartOf="@id/labelNick"
+                app:layout_constraintTop_toBottomOf="@id/etCity" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etState"
+                style="@style/edtStyleCommon"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:digits="@string/digit_alpha"
+                android:hint="@string/hint_state"
+                android:inputType="textNoSuggestions|textFilter"
+                app:layout_constraintEnd_toEndOf="@id/labelNick"
+                app:layout_constraintStart_toStartOf="@id/labelNick"
+                app:layout_constraintTop_toBottomOf="@id/labelState" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/labelPincode"
+                style="@style/tvStyleRegular"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/hint_pincode"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="@id/labelNick"
+                app:layout_constraintStart_toStartOf="@id/labelNick"
+                app:layout_constraintTop_toBottomOf="@id/etState" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etPincode"
+                style="@style/edtStyleCommon"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:hint="@string/hint_pincode"
+                android:inputType="number"
+                android:maxLength="6"
+                app:layout_constraintEnd_toEndOf="@id/labelNick"
+                app:layout_constraintStart_toStartOf="@id/labelNick"
+                app:layout_constraintTop_toBottomOf="@id/labelPincode" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAdd"
+                style="@style/btnStyleCommon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_80sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:text="@string/button_add_now"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etPincode" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black"
+    tools:context=".presentation.loginsignup.LoginActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/background_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/back_app"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@id/guidelineLogoEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineLogoStart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include layout="@layout/layout_guideline" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewLogo"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="@dimen/dimen_0dp"
+                android:layout_marginTop="@dimen/_60sdp"
+                android:src="@drawable/logo_bluboy"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="@id/guidelineLogoEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineLogoStart"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".4" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLoginSignup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/berlin_sans_bold"
+                android:text="@string/label_login_signup"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/guidelineCenter" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewEnterMobile"
+                style="@style/tvStyleRegular"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/label_enter_mobile"
+                android:textColor="@color/text_content_color"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/textViewLoginSignup"
+                app:layout_constraintTop_toBottomOf="@id/textViewLoginSignup" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mobText"
+                style="@style/tvStyleRegular"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/mobile_number"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/textViewLoginSignup"
+                app:layout_constraintTop_toBottomOf="@id/textViewEnterMobile" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextMobile"
+                style="@style/edtStyleCommon"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:hint="@string/hint_enter_mobile"
+                android:inputType="number"
+                android:maxLength="@integer/max_length_mobile"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/mobText" />
+
+            <CheckBox
+                android:id="@+id/checkboxTermsConditions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/radio_auth_selector"
+                android:button="@null"
+                android:checked="true"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/editTextMobile" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/iAgree"
+                style="@style/tvStyleRegular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:fontFamily="@font/berlin_sans_regular"
+                android:includeFontPadding="false"
+                android:paddingStart="@dimen/_2sdp"
+                android:paddingEnd="@dimen/_2sdp"
+                android:text="@string/i_agree_with_the_terms"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_11ssp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/checkboxTermsConditions"
+                app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toEndOf="@id/checkboxTermsConditions"
+                app:layout_constraintTop_toTopOf="@id/checkboxTermsConditions" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonGetStarted"
+                style="@style/btnStyleCommon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/next"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/checkboxTermsConditions" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

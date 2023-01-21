@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/background_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/back_app"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@id/guidelineLogoEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineLogoStart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/layout_toolbar_title_back" />
+
+    <include layout="@layout/layout_guideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEnd_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.965" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.035" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:alpha="0.25"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/tabsBack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:alpha="0.8"
+        android:scaleType="fitXY"
+        android:src="@drawable/rectangle_tabs"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tab1_inactive"
+        style="@style/tvStyleRegular"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="@dimen/dimen_15dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/label_All"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="@id/tabsBack"
+        app:layout_constraintEnd_toStartOf="@id/tab2_active"
+        app:layout_constraintStart_toStartOf="@id/tabsBack"
+        app:layout_constraintTop_toTopOf="@id/tabsBack" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tab2_inactive"
+        style="@style/tvStyleRegular"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="@dimen/dimen_15dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/label_winning"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="@id/tabsBack"
+        app:layout_constraintEnd_toStartOf="@id/tab3_active"
+        app:layout_constraintStart_toEndOf="@id/tab1_active"
+        app:layout_constraintTop_toTopOf="@id/tabsBack" />
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tab1_active"
+        style="@style/btnStyleTabActive"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/label_All"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/tabsBack"
+        app:layout_constraintEnd_toStartOf="@id/tab2_active"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart_1"
+        app:layout_constraintTop_toTopOf="@id/tabsBack" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tab2_active"
+        style="@style/btnStyleTabActive"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/label_winning"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/tabsBack"
+        app:layout_constraintEnd_toStartOf="@id/tab3_active"
+        app:layout_constraintStart_toEndOf="@id/tab1_active"
+        app:layout_constraintTop_toTopOf="@id/tabsBack" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tab3_active"
+        style="@style/btnStyleTabActive"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/label_cash"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/tabsBack"
+        app:layout_constraintEnd_toStartOf="@id/tab4_active"
+        app:layout_constraintStart_toEndOf="@id/tab2_active"
+        app:layout_constraintTop_toTopOf="@id/tabsBack" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tab3_inactive"
+        style="@style/tvStyleRegular"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="@dimen/dimen_15dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/label_cash"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="@id/tabsBack"
+        app:layout_constraintEnd_toStartOf="@id/tab4_active"
+        app:layout_constraintStart_toEndOf="@id/tab2_active"
+        app:layout_constraintTop_toTopOf="@id/tabsBack" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tab4_active"
+        style="@style/btnStyleTabActive"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/label_withdraw"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/tabsBack"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd_1"
+        app:layout_constraintStart_toEndOf="@id/tab3_active"
+        app:layout_constraintTop_toTopOf="@id/tabsBack"
+        app:layout_constraintWidth_percent=".25" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tab4_inactive"
+        style="@style/tvStyleRegular"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="@dimen/dimen_15dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/label_withdraw"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="@id/tabsBack"
+        app:layout_constraintEnd_toEndOf="@id/tabsBack"
+        app:layout_constraintStart_toEndOf="@id/tab3_active"
+        app:layout_constraintTop_toTopOf="@id/tabsBack" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@color/colorTransparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabsBack" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

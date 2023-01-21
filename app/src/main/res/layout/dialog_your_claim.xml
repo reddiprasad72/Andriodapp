@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewClaim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_15sdp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintClaimDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/text_heading_color">
+
+            <View
+                android:layout_width="0dp"
+                android:background="#110A00"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="20dp"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:background="@drawable/bg_bottom_claim_square"
+                android:scaleType="fitXY"
+                android:src="@drawable/gray_texture_dialog_curved"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineLogoEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.62" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineLogoStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.38" />
+
+            <ImageView
+                android:id="@+id/imageViewLogoutBg"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/ic_dialog_header"
+                android:visibility="invisible"
+                app:layout_constraintDimensionRatio="343:137"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageStars"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/dialog_stars"
+                android:visibility="invisible"
+                app:layout_constraintDimensionRatio="343:137"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewClose"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:padding="@dimen/_7sdp"
+                android:src="@drawable/ic_close_dialog"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewMessage"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="center"
+                android:text="@string/label_you_have_earned"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageGift" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewAmount"
+                style="@style/fontBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:gravity="center"
+                android:text="₹ 100"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_25ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewMessage" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDescription"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="center"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="@string/message_success_registered"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewAmount" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageGift"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="@dimen/dimen_0dp"
+                android:src="@drawable/encircled_tick"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewLogoutBg"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="@id/guidelineLogoEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineLogoStart"
+                app:layout_constraintTop_toBottomOf="@id/imageViewLogoutBg" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTitle"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:text="@string/congratulations"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_21ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewClose" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonCollectReward"
+                style="@style/btnStyleSmallRadius12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/collect_reward"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewDescription" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

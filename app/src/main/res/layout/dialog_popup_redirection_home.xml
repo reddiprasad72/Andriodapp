@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorTransparent"
+    android:minWidth="@dimen/_300sdp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorTransparent">
+
+
+        <!--        <androidx.cardview.widget.CardView-->
+        <!--            android:id="@+id/cardViewClaim"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            android:layout_margin="@dimen/_20sdp"-->
+        <!--            app:cardCornerRadius="@dimen/_18sdp"-->
+        <!--            app:cardElevation="0dp">-->
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintPopup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_15sdp"
+            android:background="@drawable/refer_list_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewGamePromotion"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:clickable="true"
+                android:scaleType="fitXY"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_120sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/gradient_home_popup_shadow"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:fontFamily="@font/berlin_sans_regular"
+                android:gravity="center"
+                android:text="Awesome ! Share your Bluboy experience with friend!"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewPopUp"
+                android:layout_width="@dimen/_180sdp"
+                android:layout_height="@dimen/_300sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewDescription" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewClose"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:padding="@dimen/_1sdp"
+                android:src="@drawable/ic_close_round_fill"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/buttonWhatsApp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:drawablePadding="@dimen/_5sdp"
+                android:gravity="center_vertical"
+                android:src="@drawable/whats_app"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/buttonShare"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewPopUp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/buttonShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:drawablePadding="@dimen/_5sdp"
+                android:gravity="center_vertical"
+                android:src="@drawable/share_"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/buttonWhatsApp"
+                app:layout_constraintTop_toTopOf="@id/buttonWhatsApp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonPlayNow"
+                style="@style/btnStyleCommon"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:text="Play Now"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewPopUp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonPromocode"
+                style="@style/btnStyleCommon"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:text="Use promocode Now"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewPopUp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--        </androidx.cardview.widget.CardView>-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

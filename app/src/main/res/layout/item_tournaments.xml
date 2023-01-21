@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_7sdp"
+    android:background="@drawable/rectangle_tournament"
+    android:paddingStart="@dimen/_5sdp"
+    android:paddingTop="@dimen/_6sdp"
+    android:paddingBottom="@dimen/_6sdp"
+    android:paddingEnd="@dimen/_8sdp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewBattleName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Tournament Name"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_14ssp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/buttonFee"
+        app:layout_constraintTop_toTopOf="@id/buttonFee" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonFee"
+        style="@style/btnStyleCommon"
+        android:layout_marginEnd="@dimen/_3sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="₹ 10"
+        android:background="@drawable/battle_button_yellow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewBonus"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toEndOf="@id/imageViewBonus"
+        app:layout_constraintEnd_toEndOf="@id/buttonFee"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/buttonFee"
+        android:text="Use Bonus 10%"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_7ssp"
+        android:fontFamily="@font/montserrat"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewBonus"
+        app:layout_constraintStart_toStartOf="@id/buttonFee"
+        android:layout_marginEnd="@dimen/_2sdp"
+        app:layout_constraintTop_toTopOf="@id/textViewBonus"
+        app:layout_constraintBottom_toBottomOf="@id/textViewBonus"
+        app:layout_constraintEnd_toStartOf="@id/textViewBonus"
+        android:layout_width="@dimen/_9sdp"
+        android:layout_height="@dimen/_9sdp"
+        android:src="@drawable/ic_gift"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llTime"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:gravity="center_vertical"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintEnd_toStartOf="@id/llPlayer"
+        app:layout_constraintStart_toStartOf="@id/textViewBattleName"
+        app:layout_constraintTop_toBottomOf="@id/textViewBonus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_13sdp"
+            android:layout_height="@dimen/_13sdp"
+            android:src="@drawable/time_tournament"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewDateTime"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:text="1D : 12h : 20m"
+        android:drawablePadding="@dimen/_3sdp"
+        android:fontFamily="@font/montserrat"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_10ssp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llPlayer"
+        android:gravity="center_vertical"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="@id/llTime"
+        app:layout_constraintStart_toEndOf="@id/llTime"
+        app:layout_constraintTop_toTopOf="@id/llTime"
+        app:layout_constraintEnd_toStartOf="@id/llWinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewUserLight"
+            android:tint="@color/colorBlack"
+            android:layout_width="@dimen/_17sdp"
+            android:layout_height="@dimen/_17sdp"
+            android:src="@drawable/ic_user_light"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            app:layout_constraintTop_toTopOf="@id/imageViewUserLight"
+            android:layout_marginStart="@dimen/_3sdp"
+            app:layout_constraintStart_toEndOf="@id/imageViewUserLight"
+            app:layout_constraintBottom_toBottomOf="@id/imageViewUserLight"
+            android:id="@+id/imageViewOnline"
+            android:src="@drawable/oval_green"
+            android:layout_width="@dimen/_2sdp"
+            android:layout_height="@dimen/_2sdp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewOnlinePlayer"
+            android:text="120/200"
+            android:layout_marginStart="@dimen/_3sdp"
+            app:layout_constraintTop_toTopOf="@id/imageViewUserLight"
+            app:layout_constraintBottom_toBottomOf="@id/imageViewUserLight"
+            app:layout_constraintStart_toEndOf="@id/imageViewOnline"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/colorBlack"
+            android:fontFamily="@font/montserrat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llWinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center_vertical"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="@id/llPlayer"
+        app:layout_constraintStart_toEndOf="@id/llPlayer"
+        app:layout_constraintTop_toTopOf="@id/llPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewTrophy"
+        android:tint="@color/colorBlack"
+        android:layout_width="@dimen/_13sdp"
+        android:layout_height="@dimen/_13sdp"
+        android:src="@drawable/trophy_black_white"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        app:layout_constraintTop_toTopOf="@id/imageViewTrophy"
+        android:layout_marginStart="@dimen/_3sdp"
+        app:layout_constraintStart_toEndOf="@id/imageViewTrophy"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewTrophy"
+        android:id="@+id/imageViewTPoint"
+        android:src="@drawable/oval_green"
+        android:layout_width="@dimen/_2sdp"
+        android:layout_height="@dimen/_2sdp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewWinner"
+        android:layout_marginEnd="@dimen/_3sdp"
+        android:text="10 Winners"
+        android:layout_marginStart="@dimen/_3sdp"
+        app:layout_constraintTop_toTopOf="@id/imageViewTrophy"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewTrophy"
+        app:layout_constraintStart_toEndOf="@id/imageViewTPoint"
+        android:textSize="@dimen/_10sdp"
+        android:textColor="@color/colorBlack"
+        android:fontFamily="@font/montserrat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

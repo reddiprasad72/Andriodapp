@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/ivImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:alpha="1"
+        android:background="@drawable/bg_how_to_play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageViewGame"
+        android:layout_width="@dimen/_47sdp"
+        android:layout_height="@dimen/_47sdp"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:src="@drawable/sample_game"
+        app:layout_constraintBottom_toBottomOf="@id/ivImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivImage"
+        app:shapeAppearanceOverlay="@style/shapeableImageView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewHowToPlay"
+        style="@style/fontRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:ellipsize="end"
+        android:text="How To Play"
+        android:textColor="@color/colorText_opacity_50"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toTopOf="@id/textViewGameName"
+        app:layout_constraintEnd_toStartOf="@id/btViewPlay"
+        app:layout_constraintStart_toEndOf="@id/imageViewGame"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewGameName"
+        style="@style/fontRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:text="Candy Crush"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/textViewHowToPlay"
+        app:layout_constraintStart_toStartOf="@id/textViewHowToPlay"
+        app:layout_constraintTop_toBottomOf="@id/textViewHowToPlay"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btViewPlay"
+        style="@style/btnStyleCommon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:background="@drawable/bg_btn_dark"
+        android:text="Play"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="16:7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent=".2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

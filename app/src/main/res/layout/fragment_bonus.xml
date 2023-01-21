@@ -1,0 +1,162 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/background_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/back_app"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@id/guidelineLogoEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineLogoStart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/layout_toolbar_title_back" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:alpha="0.25"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsvWallet"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingBottom="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <include layout="@layout/layout_guideline" />
+
+            <View
+                android:id="@+id/walletBack"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/battle_history_bg"
+                app:layout_constraintDimensionRatio="19:9"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img"
+                android:layout_width="@dimen/_47sdp"
+                android:layout_height="@dimen/_47sdp"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/wallet_side_drawer"
+                app:layout_constraintBottom_toTopOf="@id/textViewBonusBalance"
+                app:layout_constraintEnd_toEndOf="@id/walletBack"
+                app:layout_constraintStart_toStartOf="@id/walletBack"
+                app:layout_constraintTop_toTopOf="@id/walletBack"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer1"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:background="@color/colorTransparent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintBottom_toTopOf="@id/textViewTotalBalanceLabel"
+                app:layout_constraintEnd_toEndOf="@id/img"
+                app:layout_constraintStart_toStartOf="@id/img"
+                app:layout_constraintTop_toBottomOf="@id/img">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/shimmer_demo_color"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewBonusBalance"
+                style="@style/fontBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text=""
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_25ssp"
+                app:layout_constraintBottom_toBottomOf="@id/walletBack"
+                app:layout_constraintEnd_toEndOf="@id/walletBack"
+                app:layout_constraintStart_toStartOf="@id/walletBack"
+                app:layout_constraintTop_toBottomOf="@id/img"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTitle"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:text="Bonus Amount"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintEnd_toStartOf="@id/textViewTitle2"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="@id/walletBack"
+                app:layout_constraintTop_toBottomOf="@id/walletBack" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTitle2"
+                style="@style/fontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:text="Transaction On"
+                android:textColor="@color/text_heading_color"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintEnd_toEndOf="@id/walletBack"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@id/textViewTitle"
+                app:layout_constraintTop_toBottomOf="@id/walletBack" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewTransaction"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/promocode_bg"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_15sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="@id/walletBack"
+                app:layout_constraintStart_toStartOf="@id/walletBack"
+                app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+                tools:itemCount="5"
+                tools:listitem="@layout/bonus_transaction" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

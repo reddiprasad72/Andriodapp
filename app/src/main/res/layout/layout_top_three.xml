@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_black"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_320sdp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/rays_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewProfileTwobg"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="@dimen/_94sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="-35dp"
+        android:background="@drawable/border_rank_two"
+        android:paddingStart="@dimen/_3sdp"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingEnd="@dimen/_3sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewProfilebg"
+        app:layout_constraintEnd_toStartOf="@id/imageViewProfilebg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewProfilebg" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageViewProfileTwo"
+        android:layout_width="@dimen/_86sdp"
+        android:layout_height="@dimen/_86sdp"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:layout_marginEnd="-35dp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_transaction_item"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewProfilebg"
+        app:layout_constraintEnd_toStartOf="@id/imageViewProfilebg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewProfilebg"
+        app:shapeAppearanceOverlay="@style/shapeableImageViewProfile" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivRankTwoSilver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/rank_two_silver"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewProfileTwobg"
+        app:layout_constraintEnd_toEndOf="@id/imageViewProfileTwobg"
+        app:layout_constraintStart_toStartOf="@id/imageViewProfileTwobg" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewProfileThreebg"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="@dimen/_94sdp"
+        android:layout_marginStart="-35dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/border_rank_three"
+        android:paddingStart="@dimen/_3sdp"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingEnd="@dimen/_3sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewProfilebg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageViewProfilebg"
+        app:layout_constraintTop_toTopOf="@+id/imageViewProfilebg" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageViewProfileThree"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="@dimen/_94sdp"
+        android:layout_marginStart="-35dp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:paddingStart="@dimen/_2sdp"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingEnd="@dimen/_2sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_transaction_item"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewProfilebg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageViewProfilebg"
+        app:layout_constraintTop_toTopOf="@+id/imageViewProfilebg"
+        app:shapeAppearanceOverlay="@style/shapeableImageViewProfile" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivRankThreeBronze"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/rank_three_bronze"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewProfileThreebg"
+        app:layout_constraintEnd_toEndOf="@id/imageViewProfileThreebg"
+        app:layout_constraintStart_toStartOf="@id/imageViewProfileThreebg" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewProfilebg"
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="@dimen/_110sdp"
+        android:layout_marginBottom="@dimen/_60sdp"
+        android:background="@drawable/border_rank_one"
+        android:paddingStart="@dimen/_3sdp"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingEnd="@dimen/_3sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageViewProfileone"
+        android:layout_width="@dimen/_105sdp"
+        android:layout_height="@dimen/_105sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_marginBottom="@dimen/_60sdp"
+        android:paddingBottom="@dimen/_9sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_transaction_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/shapeableImageViewProfile" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageCrown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:src="@drawable/rank_one_crown"
+        app:layout_constraintBottom_toTopOf="@id/imageViewProfilebg"
+        app:layout_constraintEnd_toEndOf="@id/imageViewProfilebg"
+        app:layout_constraintStart_toStartOf="@id/imageViewProfilebg" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivRankOneGold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/rank_one_gold"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewProfilebg"
+        app:layout_constraintEnd_toEndOf="@id/imageViewProfilebg"
+        app:layout_constraintStart_toStartOf="@id/imageViewProfilebg" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewBackgroundUserOne"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_rank_one"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/imageViewProfilebg"
+        app:layout_constraintStart_toStartOf="@id/imageViewProfilebg"
+        app:layout_constraintTop_toBottomOf="@id/textViewUserOneName" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewBackgroundUserTwo"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_35sdp"
+        android:layout_marginEnd="@dimen/_27sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_rank_two"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guidelineCenter"
+        app:layout_constraintTop_toBottomOf="@id/textViewUserTwoPoint" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewUserTwoName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/berlin_sans_regular"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintBottom_toTopOf="@id/textViewUserTwoPoint"
+        app:layout_constraintEnd_toEndOf="@id/imageViewProfileTwobg"
+        app:layout_constraintStart_toStartOf="@id/imageViewProfileTwobg"
+        app:layout_constraintTop_toBottomOf="@id/ivRankTwoSilver"
+        tools:text="bhailal_chauhan1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewUserTwoPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:textColor="@color/silver_color"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="@id/textViewUserTwoName"
+        app:layout_constraintStart_toStartOf="@id/textViewUserTwoName"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUserTwoName"
+        tools:text="47,850" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewRankTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:fontFamily="@font/berlin_sans_regular"
+        android:includeFontPadding="false"
+        android:text="@string/rank_two"
+        android:textColor="@color/colorBlackOpacity90"
+        android:textSize="@dimen/_12ssp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/textViewUserTwoPoint"
+        app:layout_constraintStart_toStartOf="@id/textViewUserTwoPoint"
+        app:layout_constraintTop_toBottomOf="@id/textViewUserTwoPoint" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewBackgroundUserThree"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_33sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_rank_three"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guidelineCenter"
+        app:layout_constraintTop_toBottomOf="@id/textViewUserThreePoint" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewUserThreeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/berlin_sans_regular"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintBottom_toTopOf="@id/textViewUserThreePoint"
+        app:layout_constraintEnd_toEndOf="@id/imageViewProfileThreebg"
+        app:layout_constraintStart_toStartOf="@id/imageViewProfileThreebg"
+        app:layout_constraintTop_toBottomOf="@id/ivRankThreeBronze"
+        tools:text="bhailal_chauhan1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewUserThreePoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:gravity="center"
+        android:textColor="@color/bronze_color"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="@id/textViewUserThreeName"
+        app:layout_constraintStart_toStartOf="@id/textViewUserThreeName"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUserThreeName"
+        tools:text="47,850" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewRankThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:fontFamily="@font/berlin_sans_regular"
+        android:includeFontPadding="false"
+        android:text="@string/rank_three"
+        android:textColor="@color/colorBlackOpacity90"
+        android:textSize="@dimen/_12ssp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/textViewUserThreePoint"
+        app:layout_constraintStart_toStartOf="@id/textViewUserThreePoint"
+        app:layout_constraintTop_toBottomOf="@id/textViewUserThreePoint" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewUserOneName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/berlin_sans_regular"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintBottom_toTopOf="@id/textViewUserOnePoint"
+        app:layout_constraintEnd_toEndOf="@id/imageViewProfilebg"
+        app:layout_constraintStart_toStartOf="@id/imageViewProfilebg"
+        app:layout_constraintTop_toBottomOf="@id/ivRankOneGold"
+        tools:text="bhailal_chauhan1" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewUserOnePoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:gravity="center"
+        android:textColor="@color/golden_color"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="@id/imageViewBackgroundUserOne"
+        app:layout_constraintStart_toStartOf="@id/imageViewBackgroundUserOne"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUserOneName"
+        tools:text="47,850" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewRankOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/berlin_sans_regular"
+        android:text="@string/rank_one"
+        android:textColor="@color/colorBlackOpacity90"
+        android:textSize="@dimen/_17ssp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewBackgroundUserOne"
+        app:layout_constraintEnd_toEndOf="@id/textViewUserOnePoint"
+        app:layout_constraintStart_toStartOf="@id/textViewUserOnePoint"
+        app:layout_constraintTop_toBottomOf="@id/textViewUserOnePoint" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

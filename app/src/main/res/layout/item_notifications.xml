@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/ivImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:alpha="1"
+        android:background="@drawable/background_gradient_radius_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageViewNotification"
+        android:layout_width="@dimen/_47sdp"
+        android:layout_height="@dimen/_47sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_11sdp"
+        android:background="@color/notify_drawable"
+        android:scaleType="fitXY"
+        android:src="@drawable/gift_icon"
+        app:contentPadding="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="@id/ivImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivImage"
+        app:shapeAppearanceOverlay="@style/shapeableImageView" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewNotificationContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_11sdp"
+        android:layout_marginEnd="@dimen/_11sdp"
+        android:ellipsize="end"
+        android:fontFamily="@font/berlin_sans_regular"
+        android:text="@string/dummy_lorem_ipsum"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toTopOf="@id/textViewTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageViewNotification"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_11sdp"
+        android:fontFamily="@font/berlin_sans_regular"
+        android:text="20 mins ago"
+        android:textColor="@color/colorText_opacity_58"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textViewNotificationContent"
+        app:layout_constraintTop_toBottomOf="@id/textViewNotificationContent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

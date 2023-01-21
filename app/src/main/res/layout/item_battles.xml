@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_7sdp"
+    android:background="@drawable/gray_texture_bg"
+    android:paddingStart="@dimen/_8sdp"
+    android:paddingEnd="@dimen/_8sdp"
+    android:paddingBottom="@dimen/_10sdp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewBattleName"
+        style="@style/fontRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="Battle 1"
+        android:textColor="@color/text_heading_color"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintEnd_toStartOf="@id/imageViewFeaturedBattle"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewFeaturedBattle"
+        android:layout_width="@dimen/_16sdp"
+        android:layout_height="@dimen/_16sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:src="@drawable/featured_battle"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/textViewBattleName"
+        app:layout_constraintEnd_toStartOf="@id/llPlayer"
+        app:layout_constraintStart_toEndOf="@id/textViewBattleName"
+        app:layout_constraintTop_toTopOf="@id/textViewBattleName" />
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llPlayer"
+        android:layout_width="@dimen/_85sdp"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/textViewBattleName"
+        app:layout_constraintEnd_toStartOf="@id/buttonFee"
+        app:layout_constraintStart_toEndOf="@id/imageViewFeaturedBattle"
+        app:layout_constraintTop_toTopOf="@id/textViewBattleName">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewUserLight"
+            android:layout_width="@dimen/_17sdp"
+            android:layout_height="@dimen/_17sdp"
+            android:src="@drawable/ic_user_light" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewOnlinePlayer"
+            style="@style/fontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:ellipsize="end"
+            android:textColor="@color/text_heading_color"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toBottomOf="@id/imageViewUserLight"
+            app:layout_constraintStart_toEndOf="@id/imageViewUserLight"
+            app:layout_constraintTop_toTopOf="@id/imageViewUserLight"
+            tools:text="0 Online" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonFee"
+        style="@style/btnStyleSmall"
+        android:background="@drawable/btn_bg_battle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:text="@string/x_price_rupees"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintBottom_toBottomOf="@id/textViewBattleName"
+        app:layout_constraintDimensionRatio="12:6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textViewBattleName"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintWidth_percent=".17" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewBonus"
+        style="@style/fontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_3sdp"
+        android:gravity="center_vertical"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_7ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/buttonFee"
+        app:layout_constraintStart_toEndOf="@id/imageViewBonus"
+        app:layout_constraintTop_toBottomOf="@id/buttonFee"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Use Bonus 10%" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewBonus"
+        android:layout_width="@dimen/_9sdp"
+        android:layout_height="@dimen/_9sdp"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:src="@drawable/ic_gift"
+        app:layout_constraintBottom_toBottomOf="@id/textViewBonus"
+        app:layout_constraintEnd_toStartOf="@id/textViewBonus"
+        app:layout_constraintStart_toStartOf="@id/buttonFee"
+        app:layout_constraintTop_toTopOf="@id/textViewBonus" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupBonus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="imageViewBonus,textViewBonus" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

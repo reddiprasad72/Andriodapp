@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewGames"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/logo_bluboy"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_120sdp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewGameTag"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:background="@drawable/tag_one"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:text="recommonded "
+        android:textSize="@dimen/_10ssp"
+        android:fontFamily="@font/berlin_sans_regular"
+        android:paddingBottom="@dimen/_7sdp"
+        android:paddingStart="@dimen/_9sdp"
+        android:paddingEnd="@dimen/_9sdp"
+        android:textColor="@color/colorWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingBottom="@dimen/_3sdp"
+        android:paddingTop="@dimen/_2sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/gradient_all_home_game_b"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_70sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewGameName"
+            android:text="Bubble Shooter"
+            android:singleLine="true"
+            android:includeFontPadding="false"
+            android:ellipsize="end"
+            android:fontFamily="@font/berlin_sans_regular"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:textColor="@color/colorWhite"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            app:layout_constraintBottom_toTopOf="@id/textViewOnlineUser"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewOnlineUser"
+            android:text="900 Users Online"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/montserrat"
+            android:textSize="@dimen/_9ssp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:visibility="invisible"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:drawablePadding="@dimen/_2sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:drawableStart="@drawable/ic_user_light"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textviewCommingSoon"
+            android:text="Coming Soon..."
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/berlin_sans_regular"
+            android:textSize="@dimen/_9ssp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:drawablePadding="@dimen/_2sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
