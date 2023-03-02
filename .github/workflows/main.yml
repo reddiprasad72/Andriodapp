@@ -1,9 +1,9 @@
 name: CICD
 on:
   push:
-    branches: [ apk-s3-upload ]
+    branches: [ main ]
   pull_request:
-    branches: [ apk-s3-upload ]
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
